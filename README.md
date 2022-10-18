@@ -1,4 +1,4 @@
-# IMBuildings technical documentation
+# Start here
 
 Here we share all available information regarding the technical integration of our devices.
 If you need any additional help please contact our colleagues from support.
@@ -16,4 +16,4 @@ For product specification please visit our [website](https://www.imbuildings.com
 <br>
 
 ---
-&copy;2022 IMBuildings - The Netherlands
+<small>&copy;2022 IMBuildings - The Netherlands</small>
