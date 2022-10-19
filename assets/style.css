@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: Montserrat, sans-serif;
+    color: black !important
+}
+
+.sidebar ul li.active>a{
+    color: #1f418c !important
+}
+
+section.cover a {
+    color: white !important
+}
+
+section.cover .anchor span {
+    color: white !important
+}
+
+section.content .anchor span {
+    color: #1f418c !important
+}
