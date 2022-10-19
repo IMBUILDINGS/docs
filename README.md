@@ -3,7 +3,7 @@
 Here we share all available information regarding the technical integration of our devices.
 If you need any additional help please contact our colleagues from support.
 
-Please let us known when something is not clear or of you think something needs to be added.
+Please let us know when something is not clear or if you think something needs to be added.
 
 ## How our payload structure works
 For our LoRaWAN and NB-IoT devices we use a uniform payload structure. The payload packet can exist out of a header and data.\
