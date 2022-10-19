@@ -5,6 +5,28 @@ body {
     color: black !important
 }
 
+footer a {
+    font-size: 0.8em;
+}
+
+th {
+    color: white !important;
+    background-color: #1f418c;
+}
+
+.payload-header{
+    background-color: #80c9c4;
+}
+
+.payload-data{
+    background-color: #3770b7;
+}
+
+.table-details {
+    font-size: 0.8em;
+    text-align: center;
+}
+
 .sidebar ul li.active>a{
     color: #1f418c !important
 }
