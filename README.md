@@ -24,17 +24,19 @@ We have marked the payload by a payload type and a type variant. These are the f
 </tr>
 </table>
 
-In case a device is setup not to use the header within the payload the parser needs to know what payload to parse.<br>
-Within LoRaWAN you can use the **fPort** to determine the type of payload.
+In case a device is configured not to use the header within the payload, the parser needs to know what payload to parse.<br>
+Within LoRaWAN you can use the **FPort** to determine the type of payload.
+
+*Removing the header is not recommended for NB-IoT devices.*
 
 ### IMBuildings PayloadParser
 For decoding we have an example Payload Parser available which is written in JavaScript.\
 The parser is available in our [PayloadParser repository on GitHub](https://github.com/IMBUILDINGS/PayloadParser).
 
-The parser checks the length of the data according to the Payload type and Type variant. In case it is not matching it will fall back to the **fPort** information when available.
-When using the **fPort** the parser links the following values to the payload type and variant.
+The parser checks the length of the data according to the Payload type and Type variant. In case it is not matching it will fallback to the LoRaWAN **FPort** information when available.
+When using the **FPort**, the parser links the following port values to the payload type and variant.
 
-|fPort|Type|Variant|
+|FPort|Type|Variant|
 |-----|----|-------|
 |11|1|1|
 |26|2|6|
@@ -46,10 +48,16 @@ and so on...
 To configure our devices with custom settings you can use NFC with our [Android Config App](https://support.imbuildings.com/Config-App).<br>
 Most settings can also be changed using the downlink possibilities.
 
+From factory the devices do have a default configuration.<br>
+The LoRaWAN devices come with an App/Join EUI and App Key already configured. You can of course change these.<br>
+For each shipped order IMBuildings shares these App/join EUIs and App keys.
+
+Please contact IMBuildings for the possibilities of delivering devices with a custom configuration.
+
 ## Downlink possibilities
 By sending a downlink back to the device you can change settings as well as reading out existing settings. This is very useful for situations where you want to remote provision your devices with the required settings for your use case.
 
-Please not that the downlink features may not be available on earlier releases of our products.
+Please note that the downlink features may not be available on earlier releases of our products.
 
 ## IoT devices
 Below you can navigate to the device specific information.
@@ -65,6 +73,6 @@ Please note that our CO2 sensors, temperature and humidity sensors and motion se
 For product specifications please visit our [website](https://www.imbuildings.com)
 
 ## A note about EnOcean
-The IMBuildings People Counter devices (including the Office Occupancy Counter) are also available with sub GHz EnOcean connectivity.\
+The IMBuildings People Counter devices (including the Office Occupancy Counter) are also available with subGHz EnOcean connectivity.\
 These are using specific telegrams for transmitting data and do not use the uniform payload structure as described earlier.\
 Configuration of these devices can currently only be changed using NFC. For this you can use the Config App for Android.
