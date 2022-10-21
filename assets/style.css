@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+:root {
+    --IMBDarkBlue: #1f418c;
+    --IMBBlue: #3770b7;
+    --IMBLightBlue: #6398d1;
+    --IMBMint: #80c9c4;
+    --IMBLightGray: #d4d8da;
+    --IMBGray: #839599;
+}
+
 body {
     font-family: Montserrat, sans-serif;
     color: black !important
@@ -11,15 +20,15 @@ footer a {
 
 th {
     color: white !important;
-    background-color: #1f418c;
+    background-color: var(IMBDarkBlue);
 }
 
 .payload-header{
-    background-color: #80c9c4;
+    background-color: var(--IMBMint);
 }
 
 .payload-data{
-    background-color: #3770b7;
+    background-color: var(--IMBBlue);
 }
 
 .table-details {
@@ -28,7 +37,15 @@ th {
 }
 
 .sidebar ul li.active>a{
-    color: #1f418c !important
+    color: var(--IMBDarkBlue) !important
+}
+
+.sidebar ul li strong {
+    color: var(--IMBLightBlue) !important
+}
+
+.sidebar img {
+    width: 200px;
 }
 
 section.cover a {
@@ -40,5 +57,5 @@ section.cover .anchor span {
 }
 
 section.content .anchor span {
-    color: #1f418c !important
+    color: var(--IMBDarkBlue) !important
 }
