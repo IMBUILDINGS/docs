@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" style="width:100%;" placeholder="HEX string" value="02060004A30B00F6B5690800F80003000220060305E661" id="hexstring">
+<br>
+<button onclick="decodeInput()">Decode</button>
+
+<pre><code id="jsonoutput"></code></pre>
+
+
+<script src="./assets/prism.js"></script>
+<script src="./assets/imbuildings-decoder.js"></script>
+
+<script>
+    function parseHexString(str) { 
+        var result = [];
+        while (str.length >= 2) { 
+            result.push(parseInt(str.substring(0, 2), 16));
+            str = str.substring(2, str.length);
+        }
+
+        return result;
+    }
+
+
+    function decodeInput(){
+        let hexString = document.getElementById('hexstring').value;
+        let d = {bytes: parseHexString(hexString)};
+        let parseResult = decodeUplink(d);
+
+        if(parseResult.data){
+            parseResult = parseResult.data;
+        }
+
+        let highlighted = Prism.highlight(JSON.stringify(parseResult, null, 2), Prism.languages.json, 'json');
+
+        document.getElementById('jsonoutput').innerHTML = highlighted;
+    }
+
+</script>
+</body>
+</html>

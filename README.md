@@ -27,7 +27,7 @@ We have marked the payload by a payload type and a type variant. These are the f
 In case a device is configured not to use the header within the payload, the parser needs to know what payload to parse.<br>
 Within LoRaWAN you can use the **FPort** to determine the type of payload.
 
-*Removing the header is not recommended for NB-IoT devices.*
+!>*Removing the header is not recommended for NB-IoT devices.*
 
 ### IMBuildings PayloadParser
 For decoding we have an example Payload Parser available which is written in JavaScript.\
@@ -43,6 +43,11 @@ When using the **FPort**, the parser links the following port values to the payl
 |34|3|4|
 and so on...
 
+#### Online payload decoder
+Try it out and validate your implementation.<br>
+The decoder below is using the IMBuildings Payload Parser.
+
+[tool](./tool.html ':include')
 
 ## Device configuration
 To configure our devices with custom settings you can use NFC with our [Android Config App](https://support.imbuildings.com/Config-App).<br>
@@ -52,7 +57,7 @@ From factory the devices do have a default configuration.<br>
 The LoRaWAN devices come with an App/Join EUI and App Key already configured. You can of course change these.<br>
 For each shipped order IMBuildings shares these App/join EUIs and App keys.
 
-Please contact IMBuildings for the possibilities of delivering devices with a custom configuration.
+?>Please contact IMBuildings for the possibilities of delivering devices with a custom configuration.
 
 ## Downlink possibilities
 By sending a downlink back to the device you can change settings as well as reading out existing settings. This is very useful for situations where you want to remote provision your devices with the required settings for your use case.
