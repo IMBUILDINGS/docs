@@ -47,7 +47,7 @@ and so on...
 Try it out and validate your implementation.<br>
 The decoder below is using the IMBuildings Payload Parser.
 
-[tool](./tool.html ':include')
+[tool](./tool.html ':include type=iframe  height=500px')
 
 ## Device configuration
 To configure our devices with custom settings you can use NFC with our [Android Config App](https://support.imbuildings.com/Config-App).<br>
