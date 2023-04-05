@@ -47,7 +47,7 @@ and so on...
 Try it out and validate your implementation.<br>
 The decoder below is using the IMBuildings Payload Parser.
 
-[tool](./decoder-encoder.html ':include type=iframe  min-height=200px')
+[tool](./decoder-encoder.html ':include type=iframe height=1000px')
 
 ## Device configuration
 To configure our devices with custom settings you can use NFC with our [Android Config App](https://support.imbuildings.com/Config-App).<br>
@@ -68,7 +68,7 @@ Please note that the downlink features may not be available on earlier releases 
 Try it out and validate your implementation.<br>
 The decoder below is using the IMBuildings Downlink Encoder.
 
-[tool](./downlink.html ':include type=iframe  min-height=200px')
+[tool](./downlink.html ':include type=iframe height=1000px')
 
 ## IoT devices
 Below you can navigate to the device specific information.
