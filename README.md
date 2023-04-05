@@ -43,11 +43,11 @@ When using the **FPort**, the parser links the following port values to the payl
 |34|3|4|
 and so on...
 
-#### Online payload decoder
+#### Online payload decoder/encoder
 Try it out and validate your implementation.<br>
 The decoder below is using the IMBuildings Payload Parser.
 
-[tool](./tool.html ':include type=iframe  height=500px')
+[tool](./decoder-encoder.html ':include type=iframe  min-height=200px')
 
 ## Device configuration
 To configure our devices with custom settings you can use NFC with our [Android Config App](https://support.imbuildings.com/Config-App).<br>
@@ -63,6 +63,12 @@ For each shipped order IMBuildings shares these App/join EUIs and App keys.
 By sending a downlink back to the device you can change settings as well as reading out existing settings. This is very useful for situations where you want to remote provision your devices with the required settings for your use case.
 
 Please note that the downlink features may not be available on earlier releases of our products.
+
+### Online Downlink encoder
+Try it out and validate your implementation.<br>
+The decoder below is using the IMBuildings Downlink Encoder.
+
+[tool](./downlink.html ':include type=iframe  min-height=200px')
 
 ## IoT devices
 Below you can navigate to the device specific information.
