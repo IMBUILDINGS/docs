@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html|>
+
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="./materialize.min.css" media="screen,projection">
+        <link type="text/css" rel="stylesheet" href="../../assets/style.css" media="screen,projection">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <div class="divider"></div>
+                    <h6>Data uplink interval</h6>
+                    <!-- <div class="row">
+              <div class="col m12">
+                <div class="input-field">
+                  <select>
+                    <option value="event" disabled>On Event</option>
+                    <option value="minutes" selected>Minutes</option>
+                    <option value="6h">6 Hours</option>
+                    <option value="8h">8 Hours</option>
+                    <option value="12h">12 Hours</option>
+                    <option value="24h">24 Hours</option>
+                  </select>
+                  <label>Transmit Interval</label>
+                </div>
+              </div>
+            </div> -->
+
+                    <div class="row">
+                        <div class="col s12">
+                            <label>Minutes</label>
+                            <div class="range-field">
+                                <input type="range" min="1" max="240" value="15" id="interval_minutes"
+                                    onchange="calculate();" class="">
+                                <span class="thumb"
+                                    style="height: 0px; width: 0px; top: 10px; margin-left: 7px; left: 1194.5px;">
+                                    <span class="value">240</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <!-- <a href="#" class="btn" onclick="calculate();">Calculate</a> -->
+                    <div class="row">
+                        <div class="col s12 m12 l2 card-panel teal white-text custom-panel">
+                            <h5>Setting</h5>
+                            <p>
+                                <span id="selected_interval">240 minutes</span>
+                            </p>
+                        </div>
+                        <div class="col s12 m2 l1 card-panel blue white-text custom-panel">
+                            <h5>SF7</h5>
+                            <p>
+                                <span id="sf7">595</span> days
+                            </p>
+                        </div>
+                        <div class="col s12 m2 l1 card-panel blue white-text custom-panel">
+                            <h5>SF8</h5>
+                            <p>
+                                <span id="sf8">594</span> days
+                            </p>
+                        </div>
+                        <div class="col s12 m2 l1 card-panel blue white-text custom-panel">
+                            <h5>SF9</h5>
+                            <p>
+                                <span id="sf9">593</span> days
+                            </p>
+                        </div>
+                        <div class="col s12 m2 l1 card-panel blue white-text custom-panel">
+                            <h5>SF10</h5>
+                            <p>
+                                <span id="sf10">590</span> days
+                            </p>
+                        </div>
+                        <div class="col s12 m2 l1 card-panel blue white-text custom-panel">
+                            <h5>SF11</h5>
+                            <p>
+                                <span id="sf11">586</span> days
+                            </p>
+                        </div>
+                        <div class="col s12 m2 l1 card-panel blue white-text custom-panel">
+                            <h5>SF12</h5>
+                            <p>
+                                <span id="sf12">575</span> days
+                            </p>
+                        </div>
+                        <div class="col s12 m12 grey lighten-3 card-panel custom-panel">
+                            <h5>Info</h5>
+                            <p>
+                                For this calculation a battery capacity of 2800mAh is used. The performance of used
+                                batteries can be influenced by external factors like temperature.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="materialize.min.js"></script>
+        <script type="text/javascript" src="DeviceConfig.js"></script>
+        <script type="text/javascript" src="battery.js"></script>
+    </body>
+
+    </html>

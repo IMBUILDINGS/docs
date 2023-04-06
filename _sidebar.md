@@ -8,3 +8,4 @@
 - **Online Tools**
     - [Payload Decoder/Encoder](./tools/decoder-encoder/)
     - [Downlink Encoder](./tools/downlink/)
+    - [Battery Calculator](./tools/battery-calculator/)

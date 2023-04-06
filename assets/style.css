@@ -63,3 +63,7 @@ section.cover .anchor span {
 section.content .anchor span {
     color: var(--IMBDarkBlue) !important
 }
+
+.custom-panel {
+    margin: 5px;
+}
