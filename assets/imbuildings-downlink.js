@@ -41,7 +41,6 @@ function decodeDownlink(input) {
 
 function encodeDownlink(input) {
     let dl = [0xF1, 0x01];
-
     if (input.data.interval !== undefined) {
         if (input.data.interval == null) {
             dl.push(0x02);
@@ -143,7 +142,7 @@ function encodeDownlink(input) {
             dl.push(settingIdentifier[input.data[key]]);
         }
     }
-    
+
     return {
         fPort: 10,
         bytes: dl

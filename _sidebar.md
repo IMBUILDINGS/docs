@@ -5,3 +5,6 @@
     - [IoT Buttons](./reference-guide/buttons/)
     - [Desk Sensor](./reference-guide/desk-sensor/)
     - [Door/window sensor](./reference-guide/door-window-sensor/)
+- **Online Tools**
+    - [Payload Decoder/Encoder](./tools/decoder-encoder/)
+    - [Downlink Encoder](./tools/downlink/)

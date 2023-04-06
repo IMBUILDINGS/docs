@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../../assets/prism.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <title>IMBuildings - Online payload encoder</title>
+    <style>
+        input {
+            padding: 10px;
+            margin: 10px;
+            font-family: monospace;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="overflow-y: scroll; height:1000px;">
+        Payload:<br>
+        <input type="text" size="60" placeholder="HEX string or BASE64 string"
+            value="02060004A30B00F6B5690800F80003000220060305E661" id="payloadstring">
+        <br>
+        FPort:<br>
+        <input type="number" placeholder="FPort" value="26" id="fport">
+        <br>
+        <button onclick="decodeInput('hex')">Decode HEX String</button>
+        or
+        <button onclick="decodeInput('base64')">Decode BASE64 String</button>
+
+        <pre><code id="jsonoutput"></code></pre>
+        <div><br>
+            <h4>Payload Encoder: </h4>
+            <div id="div_JSON_input">
+                <p id="text_JSON_input"> JSON input:</p>
+                <textarea cols="40" rows="15" placeholder="JSON input" value="" id="JSON_input"
+                    oninput="changeEncoderJSON()"></textarea><br>
+            </div>
+            <br>
+            <h5>Manual: </h5>
+            Header on/off:
+            <input type="checkbox" id="checkbox" oninput="changeEncoder()" checked>
+            <div class="col-2">
+                <div id="div_payload_type"><input type="text" size="30" placeholder="Payload Type" value=""
+                        id="payload_type" oninput="changeEncoder()">
+                    <label for="payload_type">Payload Type (Number from 1 to 255)</label><br>
+                </div>
+                <div id="div_payload_variant"><input type="text" size="30" placeholder="Payload Variant" value=""
+                        id="payload_variant" oninput="changeEncoder()"><label for="payload_variant">Payload
+                        Variant(Number from 1 to 255)</label><br>
+                </div>
+                <div id="div_device_id" hidden><input type="text" size="30" placeholder="Device ID" value=""
+                        id="device_id">
+                    <label for="device_id">Device ID (String, length: 12 or 16)</label><br>
+                </div>
+                <div id="div_datetime" hidden><input type="text" size="30" placeholder="Date - Time" value=""
+                        id="datetime">
+                    <label for="datetime">Date - Time (String, like: 2023-04-04T08:58:09.000Z)</label><br>
+                </div>
+                <div id="div_device_status" hidden><input type="text" size="30" placeholder="Device Status" value=""
+                        id="device_status"><label for="device_status">Device Status (Number from 1 to 255)</label><br>
+                </div>
+                <div id="div_battery_voltage" hidden><input type="text" size="30" placeholder="Battery Voltage" value=""
+                        id="battery_voltage">
+                    <label for="battery_voltage">Battery Voltage (Number from 0.00 to 5.00)</label><br>
+                </div>
+                <div id="div_rssi" hidden><input type="text" size="30" placeholder="RSSI" value="" id="rssi">
+                    <label for="rssi">RSSI (Number from 1 to 255)</label><br>
+                </div>
+                <div id="div_temperature" hidden><input type="text" size="30" placeholder="Temperature" value=""
+                        id="temperature">
+                    <label for="temperature">Temperature (Number from 0.00 to 655.35)</label><br>
+                </div>
+                <div id="div_humidity" hidden><input type="text" size="30" placeholder="Humidity" value=""
+                        id="humidity">
+                    <label for="humidity">Humidity (Number from 0.00 to 655.35)</label><br>
+                </div>
+                <div id="div_CO2" hidden><input type="text" size="30" placeholder="CO2" value="" id="CO2">
+                    <label for="CO2">CO2 (Number from 0 to 65535)</label><br>
+                </div>
+                <div id="div_presence" hidden><input type="text" size="30" placeholder="Presence" value=""
+                        id="presence">
+                    <label for="presence">Presence (Number from 0 to 255 OR true or false)</label><br>
+                </div>
+                <div id="div_event" hidden><input type="text" size="30" placeholder="Event" value="" id="event">
+                    <label for="event">Event (Number from 0 to 255)</label><br>
+                </div>
+                <div id="div_percentage" hidden><input type="text" size="30" placeholder="Percentage" value=""
+                        id="percentage">
+                    <label for="percentage">Percentage (Number from 0 to 255)</label><br>
+                </div>
+                <div id="div_minutes" hidden><input type="text" size="30" placeholder="Minutes" value="" id="minutes">
+                    <label for="minutes">Minutes (Number from 0 to 255)</label><br>
+                </div>
+                <div id="div_counter_a" hidden>
+                    <input type="text" size="30" placeholder="Counter A" value="" id="counter_a"><label
+                        for="counter_a">Counter A (Number from 0 to 65535)</label><br>
+                </div>
+                <div id="div_counter_b" hidden><input type="text" size="30" placeholder="Counter B" value=""
+                        id="counter_b">
+                    <label for="counter_b">Counter B (Number from 0 to 65535)</label><br>
+                </div>
+                <div id="div_button_pressed" hidden><input type="text" size="30" placeholder="Button Pressed" value=""
+                        id="button_pressed">
+                    <label for="button_pressed">Button Pressed (Number from 0 to 255)</label><br>
+                </div>
+                <div id="div_button_a" hidden><input type="text" size="30" placeholder="Button A" value=""
+                        id="button_a">
+                    <label for="button_a">Button A (Number from 0 to 65535)</label><br>
+                </div>
+                <div id="div_button_b" hidden><input type="text" size="30" placeholder="Button B" value=""
+                        id="button_b">
+                    <label for="button_b">Button B (Number from 0 to 65535)</label><br>
+                </div>
+                <div id="div_button_c" hidden><input type="text" size="30" placeholder="Button C" value=""
+                        id="button_c">
+                    <label for="button_c">Button C (Number from 0 to 65535)</label><br>
+                </div>
+                <div id="div_button_d" hidden><input type="text" size="30" placeholder="Button D" value=""
+                        id="button_d">
+                    <label for="button_d">Button D (Number from 0 to 65535)</label><br>
+                </div>
+                <div id="div_button_e" hidden><input type="text" size="30" placeholder="Button E" value=""
+                        id="button_e">
+                    <label for="button_e">Button E (Number from 0 to 65535)</label><br>
+                </div>
+                <div id="div_CELevel" hidden><input type="text" size="30" placeholder="CELevel" value="" id="CELevel">
+                    <label for="CELevel">CELevel (Number from 0 to 255)</label><br>
+                </div>
+                <div id="div_sensor_status" hidden><input type="text" size="30" placeholder="Sensor Status" value=""
+                        id="sensor_status">
+                    <label for="sensor_status">Sensor Status (Number from 0 to 255)</label><br>
+                </div>
+                <div id="div_total_counter_a" hidden><input type="text" size="30" placeholder="Total Counter A" value=""
+                        id="total_counter_a">
+                    <label for="total_counter_a">Total Counter A (Number from 0 to 65535)</label><br>
+                </div>
+                <div id="div_total_counter_b" hidden><input type="text" size="30" placeholder="Total Counter B" value=""
+                        id="total_counter_b">
+                    <label for="total_counter_b">Total Counter B (Number from 0 to 65535)</label><br>
+                </div>
+                <div id="div_payload_counter" hidden>
+                    <input type="text" size="30" placeholder="Payload Counter" value="" id="payload_counter"><label
+                        for="payload_counter">Payload Counter (Number from 0 to 255)</label><br>
+                </div>
+                <div id="div_payload_combi" hidden>
+                    <p><i>Payload Type & Payload Variant combination unknown..</i></p>
+                </div>
+                <button onclick="encode()">Encode</button>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/prism.js"></script>
+    <script src="../../assets/imbuildings-decoder.js"></script>
+    <script src="../../assets/imbuildings-encoder.js"></script>
+
+    <script>
+        function parseHexString(str) {
+            var result = [];
+            while (str.length >= 2) {
+                result.push(parseInt(str.substring(0, 2), 16));
+                str = str.substring(2, str.length);
+            }
+            return result;
+        }
+
+        function base64ToArrayBuffer(base64) {
+            var binary_string = window.atob(base64);
+            var len = binary_string.length;
+            var bytes = [];
+            for (var i = 0; i < len; i++) {
+                bytes[i] = binary_string.charCodeAt(i);
+            }
+            return bytes;
+        }
+
+        function decodeInput(format) {
+            let fport = parseInt(document.getElementById('fport').value);
+            let payloadString = document.getElementById('payloadstring').value;
+            let d = { fPort: fport };
+
+            if (format == 'hex') {
+                d.bytes = parseHexString(payloadString);
+            }
+            if (format == 'base64') {
+                d.bytes = base64ToArrayBuffer(payloadString);
+            }
+
+            let parseResult = decodeUplink(d);
+
+            if (parseResult.data) {
+                parseResult = parseResult.data;
+            }
+
+            hideInputs()
+            for (let i of Object.keys(parseResult)) {
+                if (i != "errors") {
+                    document.getElementById('text_JSON_input').innerHTML = "JSON input: GOOD"
+                    document.getElementById("div_" + i).removeAttribute("hidden")
+                    document.getElementById(i).value = parseResult[i];
+                } else {
+                    document.getElementById('text_JSON_input').innerHTML = "JSON input: BAD"
+                }
+            }
+            document.getElementById('JSON_input').value = JSON.stringify(parseResult, null, 2)
+            changeEncoder()
+
+            let highlighted = Prism.highlight(JSON.stringify(parseResult, null, 2), Prism.languages.json, 'json');
+            document.getElementById('jsonoutput').innerHTML = highlighted;
+        }
+
+
+    </script>
+</body>
+
+</html>

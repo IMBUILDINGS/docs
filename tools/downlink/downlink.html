@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./assets/prism.css" rel="stylesheet" />
+    <link href="../../assets/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="../../assets/style.css">
     <title>IMBuildings - Downlink Encoder</title>
     <style>
         input {
@@ -20,11 +20,15 @@
 </head>
 
 <body>
-    <div>
+    <div style="overflow-y: scroll; height:1000px;">
         <h4>Downlink Encoder: </h4>
         <p>You can drag items from below the dropzone into the dropzone, you can remove items from the dropzone by
             dragging them on to the trash can. </p>
         <p><b>Note:</b> The downlink will most likely not be in the same order that you add the items.</p>
+        <div>
+            <input type="checkbox" id="checkbox_Header" name="checkbox_Header" onchange="makeDownlink()" checked>
+            <label for="checkbox_Header">Header on/off</label>
+        </div>
         <input type="text" size="100" placeholder="Downlink will appear here.." value="" id="downlinkP"
             readonly="readonly">
         <button onclick="resetDownlink()">Reset</button>
@@ -68,12 +72,13 @@
             <input type="checkbox" id="checkbox_Set" name="checkbox_Set" onchange="changeCheckedList()" checked>
             <label for="checkbox_Set">Set</label>
         </div>
-        <p><b>Draggable downlink items:</b></p>
-        <div id="itemlist" style="border: #bbb;border-style: solid; padding: 1%;border-width: 1px;">
+        <p><b>Draggable downlink items (scrollable):</b></p>
+        <div id="itemlist"
+            style="border: #bbb;border-style: solid; padding: 1%;border-width: 1px;overflow-y: scroll; height:300px;">
         </div>
     </div>
-    <script src="./assets/prism.js"></script>
-    <script src="./assets/imbuildings-downlink.js"></script>
+    <script src="../../assets/prism.js"></script>
+    <script src="../../assets/imbuildings-downlink.js"></script>
     <script>
         let currentList = []
         let itemlist = [
@@ -108,7 +113,7 @@
         changeCheckedList()
 
         function getNumberInput(id, type, startvalue, max) {
-            return `<input id="${id}-${type}" type="number" style="width:40px;" value="${startvalue}" min="0" max="${max}">`
+            return `<input id="${id}-${type}" type="number" style="width:80px;" value="${startvalue}" min="0" max="${max}">`
         }
 
         function setList(ilist) {
@@ -164,6 +169,7 @@
                         let keys = Object.keys(result.downlinkvalue.payload)
                         for (let i = 0; i < keys.length; i++) {
                             if (document.getElementById(`${result.id}-${keys[i]}`)) result.downlinkvalue.payload[keys[i]] = parseInt(document.getElementById(`${result.id}-${keys[i]}`).value).toString(16)
+                            if (result.downlinkvalue.payload.header === false || result.downlinkvalue.payload.header) result.downlinkvalue.payload.header = document.getElementById(`checkbox_Header`).checked
                         }
                     } else {
                         let keys = Object.keys(result.downlinkvalue)
@@ -182,14 +188,16 @@
             });
 
             if (result.length > 2) {
+                let first = true
                 for (const iterator of result) {
-                    setString += " " + (iterator.length > 1 ? iterator : "0" + iterator)
+                    setString += first ? "" : " "
+                    setString += (iterator.length > 1 ? iterator : "0" + iterator)
+                    first = false
                 }
                 document.getElementById("downlinkP").value = setString
             } else {
                 document.getElementById("downlinkP").value = ""
             }
-            encodeDownlink(input)
         }
 
         function search() {
