@@ -20,56 +20,61 @@
 </head>
 
 <body>
-    <div style="overflow-y: scroll; height: 1700px;">
+    <div style="overflow-y: scroll; height: 1400px;">
         <p>You can drag items from below the dropzone into the dropzone, you can remove items from the dropzone by
             dragging them on to the trash can. </p>
         <p><b>Note:</b> The downlink will most likely not be in the same order that you add the items.</p>
-        <div>
-            <input type="checkbox" id="checkbox_Header" name="checkbox_Header" onchange="makeDownlink()" checked>
-            <label for="checkbox_Header">Header on/off</label>
+        <div style="width: 30%;float: left;">
+            <input placeholder="Search.." id="search_downlink" size="30" oninput="search()" />
+            <div>
+                <input type="radio" id="radio_People_Counter" name="radio_downlink" onchange="changeCheckedList()"
+                    checked>
+                <label for="radio_People_Counter">People Counter</label>
+            </div>
+            <div>
+                <input type="radio" id="radio_Comfort_Sensor" name="radio_downlink" onchange="changeCheckedList()">
+                <label for="radio_Comfort_Sensor">Comfort Sensor</label>
+            </div>
+            <div>
+                <input type="radio" id="radio_Moodbox" name="radio_downlink" onchange="changeCheckedList()">
+                <label for="radio_Moodbox">Moodbox</label>
+            </div>
+            <div>
+                <input type="radio" id="radio_Office_Occupancy" name="radio_downlink" onchange="changeCheckedList()">
+                <label for="radio_Office_Occupancy">Office Occupancy Counter</label>
+            </div>
+            -
+            <div>
+                <input type="checkbox" id="checkbox_Request" name="checkbox_Request" onchange="changeCheckedList()"
+                    checked>
+                <label for="checkbox_Request">Request</label>
+            </div>
+            <div>
+                <input type="checkbox" id="checkbox_Set" name="checkbox_Set" onchange="changeCheckedList()" checked>
+                <label for="checkbox_Set">Set</label>
+            </div>
         </div>
-        <input type="text" size="100" placeholder="Downlink will appear here.." value="" id="downlinkP"
-            readonly="readonly">
-        <button onclick="resetDownlink()">Reset</button>
-        <br>
-        <p><b>Drop downlink items here:</b></p>
-        <svg fill="black" stroke="black" stroke-width="0.1" style="height: 50px;" viewBox="0 0 16 16"
-            xmlns="http://www.w3.org/2000/svg" aria-hidden="true" ondrop="dropDelete(event)"
-            ondragover="allowDrop(event)">
-            <path
-                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-            <path fill-rule="evenodd"
-                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-        </svg>
-        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" onchange="makeDownlink()"
-            style="background-color: #d4d8da;width: 85%;min-height: 100px; border: #1f418c;border-style: dashed;padding-left: 20px; float: left;">
-        </div>
-        <br>
-        <input placeholder="Search.." id="search_downlink" size="30" oninput="search()" />
-        <div>
-            <input type="radio" id="radio_People_Counter" name="radio_downlink" onchange="changeCheckedList()" checked>
-            <label for="radio_People_Counter">People Counter</label>
-        </div>
-        <div>
-            <input type="radio" id="radio_Comfort_Sensor" name="radio_downlink" onchange="changeCheckedList()">
-            <label for="radio_Comfort_Sensor">Comfort Sensor</label>
-        </div>
-        <div>
-            <input type="radio" id="radio_Moodbox" name="radio_downlink" onchange="changeCheckedList()">
-            <label for="radio_Moodbox">Moodbox</label>
-        </div>
-        <div>
-            <input type="radio" id="radio_Office_Occupancy" name="radio_downlink" onchange="changeCheckedList()">
-            <label for="radio_Office_Occupancy">Office Occupancy Counter</label>
-        </div>
-        -
-        <div>
-            <input type="checkbox" id="checkbox_Request" name="checkbox_Request" onchange="changeCheckedList()" checked>
-            <label for="checkbox_Request">Request</label>
-        </div>
-        <div>
-            <input type="checkbox" id="checkbox_Set" name="checkbox_Set" onchange="changeCheckedList()" checked>
-            <label for="checkbox_Set">Set</label>
+        <div style="width: 70%;float: left;">
+            <input type="text" size="90" placeholder="Downlink will appear here.." value="" id="downlinkP"
+                readonly="readonly">
+            <button onclick="resetDownlink()">Reset</button>
+            <br>
+            <div>
+                <input type="checkbox" id="checkbox_Header" name="checkbox_Header" onchange="makeDownlink()" checked>
+                <label for="checkbox_Header">Header on/off</label>
+            </div>
+            <p><b>Drop downlink items here:</b></p>
+            <svg fill="black" stroke="black" stroke-width="0.1" style="height: 50px;" viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg" aria-hidden="true" ondrop="dropDelete(event)"
+                ondragover="allowDrop(event)">
+                <path
+                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                <path fill-rule="evenodd"
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+            </svg>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" onchange="makeDownlink()"
+                style="background-color: #d4d8da;width: 85%;min-height: 130px; border: #1f418c;border-style: dashed;padding-left: 20px; float: left;">
+            </div>
         </div>
         <p><b>Draggable downlink items (scrollable):</b></p>
         <div id="itemlist"
