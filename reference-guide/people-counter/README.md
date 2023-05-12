@@ -93,7 +93,7 @@ Please note that payload information for the EnOcean devices can be found in the
 <table>
 <tr><th width="300">Status LED</th><th width="600">Description</th></tr>
 <tr><td>:red_circle: (blinking) :red_circle: (blinking)</td><td>Not connected with gateway (SNG)</td></tr>
-<tr><td>:red_circle: (blinking) :green_circle: (blinking)</td><td>Not connected with gateway (SNG)</td></tr>
+<tr><td>:red_circle: (blinking) :green_circle: (blinking)</td><td>Connected with gateway (SNG)</td></tr>
 </table>
 
 **During normal operation**
