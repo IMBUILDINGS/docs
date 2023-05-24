@@ -4,5 +4,5 @@ These products do share the same configuration settings and payload structures.
 
 ## Payload decoding
 
-Detailed information is available in the [Reference Guide](/docs/pdf/IMBUILDINGS_Reference_Guide_for_System_Integrators.pdf ':ignore').
+Detailed information is available our [Reference Guide](/docs/pdf/IMBUILDINGS_Reference_Guide_for_System_Integrators.pdf ':ignore').
 Please have a look at chapter 1.3 for the various payload formats.
