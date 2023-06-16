@@ -6,7 +6,7 @@ To install the SensorServer manually please place the files from the following Z
 
 The application folder is by default located at: `C:\Program Files (x86)\IMMOTION\users\default\apps`
 
-[Download SensorServer v1.9.2.zip](https://support.imbuildings.com/docs/support-info/downloads/SensorServer.v.1.9.2.zip)
+[Download SensorServer v1.9.2.zip](https://support.imbuildings.com/docs/support-info/downloads/SensorServer.v1.9.2.zip)
 
 Please check if the following database changes needs to be applied:
 
