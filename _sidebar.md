@@ -1,12 +1,14 @@
 * [Home](/#start-here)
-- **IoT Devices**
-    - [People Counter](./reference-guide/people-counter/)
-    - [Comfort Sensor](./reference-guide/comfort-sensor/)
-    - [IoT Buttons](./reference-guide/buttons/)
-    - [Desk Sensor](./reference-guide/desk-sensor/)
-    - [Door/window sensor](./reference-guide/door-window-sensor/)
+- **Quick start**
+    - [People counter LoRaWAN](./quick-start/people-counter/lorawan/)
 - [**Cloud**](./quick-start/cloud/)
 - **Online Tools**
     - [Payload Decoder/Encoder](./tools/decoder-encoder/)
     - [Downlink Encoder](./tools/downlink/)
     - [Battery Calculator](./tools/battery-calculator/)
+- **Referance guide**
+    - [People Counter](./reference-guide/people-counter/)
+    - [Comfort Sensor](./reference-guide/comfort-sensor/)
+    - [IoT Buttons](./reference-guide/buttons/)
+    - [Desk Sensor](./reference-guide/desk-sensor/)
+    - [Door/window sensor](./reference-guide/door-window-sensor/)
