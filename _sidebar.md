@@ -1,6 +1,7 @@
 * [Home](/#start-here)
 - **Quick start**
-    - [People counter LoRaWAN](./quick-start/people-counter/lorawan/)
+    - [People Counter - LoRaWAN](./quick-start/people-counter/lorawan/)
+    - [People Counter - NB-IoT](./quick-start/people-counter/nb-iot/)
 - [**Cloud**](./quick-start/cloud/)
 - **Online Tools**
     - [Payload Decoder/Encoder](./tools/decoder-encoder/)
