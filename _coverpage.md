@@ -1,7 +1,7 @@
 <img src="./assets/IMBuildings_logo_white.png" width="400">
 <br><br>
 
-# Technical documentation
+# Documentation
 
 [IMBuildings website](https://www.imbuildings.com)
 [IMBuildings GitHub]( https://github.com/IMBUILDINGS)
