@@ -11,7 +11,6 @@ We will quickly go through the following topics:
   - [Validation & Alignment](#Validation-&-Alignment)
   - [Features and Functions](#Features-and-Functions)
   - [mounting](#mounting)
-  - [Ding6](#Ding6)
 
 ## General information
 
@@ -20,31 +19,44 @@ The IR transmitter the infrared signal.
 The IR receiver is the main part and holds the intelligence and communication with the outside world.
 
 ## LED indications
-LED blinks orange
-Battery voltage to low. Cause: empty batteries or rechargeable batteries placed.
-The device halts here.
-
-LED is orange for 2 seconds
-used batteries are detected at power up
-
-LED is blue
-No or incomplete settings. 
-The device halts here
-
-LED is blinking blue
-Building connection with the LoRaWAN network
-
-LED is green for 2 seconds
-Connected. Device is now in validation mode
+<table>
+<tr><th width="300">Status LED</th><th width="600">Description</th></tr>
+<tr><td>:orange_circle: (flashing)</td><td>Battery voltage to low.</td></tr>
+<tr><td>:orange_circle: (2 sec.)</td><td>Used battery placed</td></tr>
+<tr><td>:large_blue_circle: (on)</td><td>Incorrect settings unable to make connection</td></tr>
+<tr><td>:large_blue_circle: (flashing)</td><td>Connecting</td></tr>
+<tr><td>:large_blue_circle: (flashing) :green_circle: (blinking)</td><td>Connected</td>
+</table>
 
 ## Validation & Alignment
+The device will first go into alignment mode for 1 minute before entering the validation mode.
  
-Placeholder text
+Alignment mode
+When the led is blinking RED you need to point the IR transmitter to the IR receiver until the led lights up GREEN continuously.
+Please try to find the middle of the infrared light beam during the alignment.
+
+<table>
+<tr><th width="300">Status LED</th><th width="600">Description</th></tr>
+<tr><td>:green_circle: (on)</td><td>IR Transmitter and receiver are aligned</td>
+<tr><td>:red_circle: (on)</td><td>IR Transmitter seen on only the left or right LED</td>
+<tr><td>:red_circle: (flashing)</td><td>IR Transmitter and IR Receiver not aligned</td>
+</table>
+
+validation mode
+The led will blink green when a count is registered.
+Please make some counts.
+
+<table>
+<tr><th width="300">Status LED</th><th width="600">Description</th></tr>
+<tr><td>:green_circle: (blinking)</td><td>Count registrated</td>
+</table>
+
+!>Note: Under normal operation the counter indicator LEDs remain active for approximately 2 minutes after a connection has been established.
+sOnce the LED turns off no indication of activity is given, unless activated again using the magnet area.
 
 ## Features and Functions
 
 placeholder text
 
-## mounting
+## mounting & installation
 
-## Ding6
