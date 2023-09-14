@@ -52,11 +52,24 @@ Please make some counts.
 </table>
 
 !>Note: Under normal operation the counter indicator LEDs remain active for approximately 2 minutes after a connection has been established.
-sOnce the LED turns off no indication of activity is given, unless activated again using the magnet area.
+once the LED turns off no indication of activity is given, unless activated again using the magnet area.
 
 ## Features and Functions
+<table>
+<tr><th width="200">Feature</th><th width="300">Description</th><th width="100">Avalible from version</th></tr>
+<tr><td>Event Mode</td><td>per telling sturen of met een timeout</td><td>vx.xx</td>
+<tr><td>Event Mode</td><td>per telling sturen of met een timeout</td><td>vx.xx</td>
+</table>
 
-placeholder text
 
-## mounting & installation
 
+## mounting & Installation
+
+When mounting the People Counter take care of the following:
+
+The maximum distance between the transmitter (Tx) and receiver (Rx) is 8 meter.
+
+To count adults we recommend to use a mounting height between 150cm and 160cm.
+
+
+!>Note: The maximum measurement width of 8 meter will decrease when the infrared signal goes through glass or when full sunlight is shining directly into the receiver at a low angle.
