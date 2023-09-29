@@ -1,6 +1,6 @@
 # People Counter - EnOcean
 
-?> Download the <a href="./pdf/">Quick start guide</a>
+?> Download the <a href="./pdf/IMBuildings - Quick start guide - People Counter - Enocean v23.09-1.pdf">Quick start guide</a>
 
 This battery powered People Counter uses the EnOcean wireless communication to transmit the data collected by the People Counter.
 
