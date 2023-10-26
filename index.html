@@ -22,6 +22,10 @@
       logo: './assets/IMBuildings_logo_color.png',
       nativeEmoji: true
     }
+
+    function resizeIframe(obj) {
+      obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+    }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>

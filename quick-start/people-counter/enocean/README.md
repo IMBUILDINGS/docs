@@ -47,7 +47,7 @@ This status LED is visible from the frontside of the device.
 <tr><td align="center"><img src="./assets/blink-led-red.gif" width="15"></td><td>IR Transmitter and IR Receiver not aligned</td>
 </table>
 
-!>**Note:** Led functionality stays active for 2 minutes after establishing the NB-IoT connection or after exiting the alignment mode
+!>**Note:** Led functionality stays active for 2 minutes after establishing the EnOcean connection or after exiting the alignment mode
 
 ## EnOcean telegrams
 
