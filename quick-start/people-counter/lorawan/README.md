@@ -55,21 +55,31 @@ Please make some counts.
 once the LED turns off no indication of activity is given, unless activated again using the magnet area.
 
 ## Features and Functions
-<table>
-<tr><th width="200">Feature</th><th width="300">Description</th><th width="100">Avalible from version</th></tr>
-<tr><td>Event Mode</td><td>per telling sturen of met een timeout</td><td>vx.xx</td>
-<tr><td>Event Mode</td><td>per telling sturen of met een timeout</td><td>vx.xx</td>
-</table>
+- Heartbeat
+  - 
+  With the heartbeat enable you will receive a data package at an interval of your choice, that provides you information about the device.
+
+- Event mode
+  - 
+    With event mode you have the posibility to send data as soon as one of the set conditioned are met.
+    Either a number of counts is met or a timeout is pased.
+
+- Downlinks
+  - 
+  Downlinks provide you with the posibility to send back data to the device and do settings remotly.
 
 
 
 ## mounting & Installation
 
-When mounting the People Counter take care of the following:
+- When mounting the People Counter take care of the following:
 
-The maximum distance between the transmitter (Tx) and receiver (Rx) is 8 meter.
+  - The maximum distance between the transmitter (Tx) and receiver (Rx) is 8 meter.
 
-To count adults we recommend to use a mounting height between 150cm and 160cm.
+  - To count adults we recommend to use a mounting height between 150cm and 160cm.
 
+  - Make sure you use the allighnment mode during installation, to make sure the transmitter and receiver are mounted properly.
+
+  - Mount the counter by either a screw in the wall mounting bracket or using an adhesive without the mounting bracket.
 
 !>Note: The maximum measurement width of 8 meter will decrease when the infrared signal goes through glass or when full sunlight is shining directly into the receiver at a low angle.
