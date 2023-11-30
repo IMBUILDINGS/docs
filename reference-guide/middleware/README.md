@@ -1,13 +1,18 @@
 # Middleware
 
 - [Introduction](#introduction)
-- [Adding devices](#device-data-forwarding)
+- [Data forwarding](#data-forwarding)
+- [Data export](#data-export)
+- [REST API](#REST-API)
 
 ## Introduction
 
 <img src="./assets/middleware/middleware-overview.png" alt="login form"  class="image-100 image-center">
 
 ## Data forwarding
+
+By using data forwarding it is possible to receive the *new* state of a group or device once it is updated.<br>
+This state can include any relevant information of the device or group.
 
 In general data forwarding is triggered when new data is comming into our platform.
 
@@ -106,3 +111,27 @@ The forward is triggered when the group is updated when data from a linked devic
 ```JS
 comming soon
 ```
+
+## Data export
+
+For supplying data to your BI solution you might use automated data collection.
+Our platform allows such an integration.<br>
+The data export method allows you to collect once (or a few times) a day a complete dataset.
+
+This method can be enabled via the platform under [Settings->Organization](https://app.im-motion.net/organization).<br>
+Here you will find the option to add tokens. Once a token is generated you are able to request an export from our 'connect' server.<br>
+Several exports (all in JSON format) are available.
+
+## REST API
+
+!> Currently a REST API is not available for custom integrations.<br>
+A future release will allow the use of an REST API
+
+The REST API will give you access to:
+- Device metadata and state
+- Group metadata and state
+- Configuration
+- Device registration / claiming
+
+!> Please note that the REST API is not to be used for collecting historical data<br>
+Please use data forwarding and storage in your own managed database solution.
