@@ -18,6 +18,10 @@ footer a {
     font-size: 0.8em;
 }
 
+.markdown-section a, .markdown-section a :visited {
+    color: var(--IMBMint) !important;
+}
+
 th {
     color: white !important;
     background-color: var(--IMBDarkBlue);
