@@ -79,3 +79,7 @@ section.content .anchor span {
     margin-left: auto;
     margin-right: auto;
 }
+
+.image-border {
+    border: 1px solid var(--IMBLightGray)
+}

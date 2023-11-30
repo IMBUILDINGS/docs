@@ -3,13 +3,12 @@
 Here we will describe how to start with the IMBuildings (or IMMotion) Cloud platform.
 
 We will quickly go through the following topics:
-- [IMBuildings Cloud](#imbuildings-cloud)
-  - [Login](#login)
-  - [Adding devices](#adding-devices)
-  - [Adding groups](#adding-groups)
-  - [Link devices to groups](#link-devices-to-groups)
-  - [Creating users](#creating-users)
-  - [Using the dashboard](#using-the-dashboard)
+- [Login](#login)
+- [Adding devices (claim devices)](#adding-devices-claim-devices)
+- [Adding groups](#adding-groups)
+- [Link devices to groups](#link-devices-to-groups)
+- [Creating users](#creating-users)
+- [Using the dashboard](#using-the-dashboard)
 
 ## Login
 
@@ -18,9 +17,9 @@ You can of course change the passwords after login on your [profile page](https:
 
 To login open the following URL: [https://app.im-motion.net](https://app.im-motion.net)
 
-<img src="./assets/cloud/login-immotion.png" alt="login form"  class="image-75 image-center">
+<img src="./assets/cloud/login-immotion.png" alt="login form"  class="image-75 image-center image-border">
 
-## Adding devices
+## Adding devices (claim devices)
 
 !> You can continue to [Adding groups](#adding-groups) when you have a **People Counter NB-IoT** or when your **supplier already added the devices** for you
 
@@ -34,12 +33,12 @@ Groups can be managed on the [Group Management page](https://app.im-motion.net/m
 
 To add a new location just click the **Create new location** button<img src="./assets/cloud/create-new-location-button.png" alt="Create new location" class="image-75"> on the [Group Management page](https://app.im-motion.net/manager/groups) and fill out the form.
 
-<img src="./assets/cloud/create-location.png" alt="create location" class="image-75 image-center">
+<img src="./assets/cloud/create-location.png" alt="create location" class="image-75 image-center image-border">
 
 Once the location is added it will appear in the Groups list<br>
-<img src="./assets/cloud/group-management-list.png" alt="group management list" class="image-75 image-center">
+<img src="./assets/cloud/group-management-list.png" alt="group management list" class="image-75 image-center image-border">
 
-?>**Note** that you can always change the group details by clicking on the group you want to change within the groups overview.
+?>**Note** that you can always change the group details by clicking on the edit icon of a group you want to change within the groups overview.
 
 !> To have access to the Settings you must have Admin rights.
 
@@ -52,10 +51,10 @@ Groups can be managed on the [Group Management page](https://app.im-motion.net/m
 To edit group details click on the group you want to edit.
 
 Devices can be linked by clicking the **Link device** button<img src="./assets/cloud/link-device-button.png" alt="Link device" class="image-75">.
-<img src="./assets/cloud/linked-devices-no-device.png" alt="linked devices" class="image-75 image-center">
+<img src="./assets/cloud/linked-devices-no-device.png" alt="linked devices" class="image-75 image-center image-border">
 
-Select the device you want to link to this location.
-<img src="./assets/cloud/link-device-form.png" alt="linked devices" class="image-75 image-center">
+Select or search the device you want to link to this location.
+<img src="./assets/cloud/link-device-form.png" alt="linked devices" class="image-75 image-center image-border">
 
 ?> **Note:** you can search within the selection box
 
@@ -66,12 +65,12 @@ Select the device you want to link to this location.
 To login on the account/tenant we recommend to create a user account for each user who is going to use the platform.
 
 Users can be managed on the [User Management page](https://app.im-motion.net/users/) via the menu **Settings->Users**.
-<img src="./assets/cloud/users-list.png" alt="Users list" class="image-75 image-center">
+<img src="./assets/cloud/users-list.png" alt="Users list" class="image-75 image-center image-border">
 
 To add a user simply click on the **Add user** button<img src="./assets/cloud/add-user-button.png" alt="Link device" class="image-75">.
 
 Enter the username and password for the new user and select the role.
-<img src="./assets/cloud/add-user.png" alt="Users list" class="image-75 image-center">
+<img src="./assets/cloud/add-user.png" alt="Users list" class="image-75 image-center image-border">
 
 ?>**Username**: please use the email address of this person as username
 

@@ -4,6 +4,7 @@
     - [People Counter - NB-IoT](./quick-start/people-counter/nb-iot/)
     - [People Counter - EnOcean](./quick-start/people-counter/enocean/)
 - [**Cloud**](./quick-start/cloud/)
+- [**Cloud Middleware**](./reference-guide/middleware/)
 - **Online Tools**
     - [Payload Decoder/Encoder](./tools/decoder-encoder/)
     - [Downlink Encoder](./tools/downlink/)
