@@ -10,6 +10,7 @@
     - [Downlink Encoder](./tools/downlink/)
     - [Battery Calculator](./tools/battery-calculator/)
 - **Referance guide**
+    - [Payload Parser](./reference-guide/payload-parser/)
     - [People Counter](./reference-guide/people-counter/)
     - [Comfort Sensor](./reference-guide/comfort-sensor/)
     - [IoT Buttons](./reference-guide/buttons/)
