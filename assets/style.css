@@ -87,3 +87,15 @@ section.content .anchor span {
 .image-border {
     border: 1px solid var(--IMBLightGray)
 }
+
+.dragable-item {
+    background-color: var(--IMBMint);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 17px;
+    text-align: center;
+    padding:7px;
+    margin:5px; 
+    color:White;
+    display: inline-block;
+}

@@ -32,10 +32,6 @@
                 <label for="radio_People_Counter">People Counter</label>
             </div>
             <div>
-                <input type="radio" id="radio_Comfort_Sensor" name="radio_downlink" onchange="changeCheckedList()">
-                <label for="radio_Comfort_Sensor">Comfort Sensor</label>
-            </div>
-            <div>
                 <input type="radio" id="radio_Moodbox" name="radio_downlink" onchange="changeCheckedList()">
                 <label for="radio_Moodbox">Moodbox</label>
             </div>
@@ -43,7 +39,6 @@
                 <input type="radio" id="radio_Office_Occupancy" name="radio_downlink" onchange="changeCheckedList()">
                 <label for="radio_Office_Occupancy">Office Occupancy Counter</label>
             </div>
-            -
             <div>
                 <input type="checkbox" id="checkbox_Request" name="checkbox_Request" onchange="changeCheckedList()"
                     checked>
@@ -76,9 +71,9 @@
                 style="background-color: #d4d8da;width: 85%;min-height: 130px; border: #1f418c;border-style: dashed;padding-left: 20px; float: left;">
             </div>
         </div>
-        <p><b>Draggable downlink items (scrollable):</b></p>
-        <div id="itemlist"
-            style="border: #bbb;border-style: solid; padding: 1%;border-width: 1px;overflow-y: scroll; height:500px;">
+        <div>
+            <p><b>Draggable downlink items (scrollable):</b></p>
+            <div id="itemlist" style="border: #bbb;border-style: solid; padding: 1%;border-width: 1px;overflow-y: scroll;"></div>
         </div>
     </div>
     <script src="../../assets/prism.js"></script>
@@ -86,31 +81,31 @@
     <script>
         let currentList = []
         let itemlist = [
-            { id: "1", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Set Interval to${getNumberInput("1", "interval", 1, 244)} minutes`, downlink: "interval", downlinkvalue: 1 },
-            { id: "2", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Set Event Count${getNumberInput("2", "count", 1, 200)} and Timeout${getNumberInput("2", "timeout", 1, 244)}`, downlink: "event", downlinkvalue: { "count": 1, "timeout": 1 } },
-            { id: "3", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Set Payload Variant${getNumberInput("3", "variant", 2, 6)} and Type${getNumberInput("3", "type", 6, 10)}`, downlink: "payload", downlinkvalue: { "type": 1, "variant": 1, "header": true } },
-            { id: "4", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Set Fport${getNumberInput("4", "fport", 1, 223)}`, downlink: "fport", downlinkvalue: 1 },
-            { id: "5", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Set Heartbeat Interval${getNumberInput("5", "interval", 1, 244)}`, downlink: "heartbeat", downlinkvalue: { "interval": 1 } },
-            { id: "6", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Set Heartbeat Variant${getNumberInput("6", "variant", 2, 6)} and Type${getNumberInput("6", "type", 6, 10)}`, downlink: "heartbeat", downlinkvalue: { "payload": { "type": 1, "variant": 1, "header": true } } },
-            { id: "7", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Set Heartbeat Fport${getNumberInput("7", "fport", 1, 223)}`, downlink: "heartbeat", downlinkvalue: { "fport": 1 } },
-            { id: "8", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Set Confirmed messages${getNumberInput("8", "confirmed_messages", 1, 12)}`, downlink: "confirmed_messages", downlinkvalue: 1 },
-            { id: "9", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Set SAVE`, downlink: "save", downlinkvalue: true },
-            { id: "10", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Set RESET${getNumberInput("10", "reset", 1, 12)}`, downlink: "reset", downlinkvalue: 1 },
+            { id: "1", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set Interval to${getNumberInput("1", "interval", 1, 244)} minutes`, downlink: "interval", downlinkvalue: 1 },
+            { id: "2", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set Event Count${getNumberInput("2", "count", 1, 200)} and Timeout${getNumberInput("2", "timeout", 1, 244)}`, downlink: "event", downlinkvalue: { "count": 1, "timeout": 1 } },
+            { id: "3", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set Payload Variant${getNumberInput("3", "variant", 2, 6)} and Type${getNumberInput("3", "type", 6, 10)}`, downlink: "payload", downlinkvalue: { "type": 1, "variant": 1, "header": true } },
+            { id: "4", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set Fport${getNumberInput("4", "fport", 1, 223)}`, downlink: "fport", downlinkvalue: 1 },
+            { id: "5", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set Heartbeat Interval${getNumberInput("5", "interval", 1, 244)}`, downlink: "heartbeat", downlinkvalue: { "interval": 1 } },
+            { id: "6", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set Heartbeat Variant${getNumberInput("6", "variant", 2, 6)} and Type${getNumberInput("6", "type", 6, 10)}`, downlink: "heartbeat", downlinkvalue: { "payload": { "type": 1, "variant": 1, "header": true } } },
+            { id: "7", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set Heartbeat Fport${getNumberInput("7", "fport", 1, 223)}`, downlink: "heartbeat", downlinkvalue: { "fport": 1 } },
+            { id: "8", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set Confirmed messages${getNumberInput("8", "confirmed_messages", 1, 12)}`, downlink: "confirmed_messages", downlinkvalue: 1 },
+            { id: "9", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set SAVE`, downlink: "save", downlinkvalue: true },
+            { id: "10", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set RESET${getNumberInput("10", "reset", 1, 12)}`, downlink: "reset", downlinkvalue: 1 },
             { id: "11", for: ["Office Occupancy"], text: `Set Office Occupancy ignore-distance${getNumberInput("11", "ignore_distance", 1, 200)} and ignore-distance${getNumberInput("11", "detection_distance", 10, 200)} in cm`, downlink: "occupancy_distance", downlinkvalue: { "ignore_distance": 1, "detection_distance": 1 } },
-            { id: "12", for: ["People Counter", "Comfort Sensor", "Office Occupancy"], text: `Set Led Indication${getNumberInput("12", "led_indication", 1, 1)}`, downlink: "led_indication", downlinkvalue: 1 },
+            { id: "12", for: ["People Counter", "Office Occupancy"], text: `Set Led Indication${getNumberInput("12", "led_indication", 1, 1)}`, downlink: "led_indication", downlinkvalue: 1 },
             { id: "13", for: ["Moodbox"], text: `Set Button Delay time${getNumberInput("13", "button_delay_time", 1, 160)}`, downlink: "button_delay_time", downlinkvalue: 1 },
             { id: "14", for: ["People Counter", "Moodbox"], text: `Request Device ID`, downlink: "request-DEVICE_ID", downlinkvalue: "DEVICE_ID" },
-            { id: "15", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Request Interval`, downlink: "request-INTERVAL", downlinkvalue: "INTERVAL" },
-            { id: "16", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Request Event Settings`, downlink: "request-EVENT_SETTING", downlinkvalue: "EVENT_SETTING" },
-            { id: "17", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Request Payload Definition`, downlink: "request-PAYLOAD_DEFINITION", downlinkvalue: "PAYLOAD_DEFINITION" },
-            { id: "18", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Request Heartbeat Interval`, downlink: "request-HEARTBEAT_INTERVAL", downlinkvalue: "HEARTBEAT_INTERVAL" },
-            { id: "19", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Request Heartbeat Payload Definition`, downlink: "request-HEARTBEAT_PAYLOAD_DEFINITION", downlinkvalue: "HEARTBEAT_PAYLOAD_DEFINITION" },
-            { id: "20", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Request Device Address`, downlink: "request-DEVICE_ADDRESS", downlinkvalue: "DEVICE_ADDRESS" },
-            { id: "21", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Request Confirm Messages`, downlink: "request-CONFIRMED_MESSAGES", downlinkvalue: "CONFIRMED_MESSAGES" },
-            { id: "22", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Request fport`, downlink: "request-FPORT", downlinkvalue: "FPORT" },
-            { id: "23", for: ["People Counter", "Comfort Sensor", "Office Occupancy", "Moodbox"], text: `Request Heartbeat Fport`, downlink: "request-FPORT_HEARTBEAT", downlinkvalue: "FPORT_HEARTBEAT" },
+            { id: "15", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Request Interval`, downlink: "request-INTERVAL", downlinkvalue: "INTERVAL" },
+            { id: "16", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Request Event Settings`, downlink: "request-EVENT_SETTING", downlinkvalue: "EVENT_SETTING" },
+            { id: "17", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Request Payload Definition`, downlink: "request-PAYLOAD_DEFINITION", downlinkvalue: "PAYLOAD_DEFINITION" },
+            { id: "18", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Request Heartbeat Interval`, downlink: "request-HEARTBEAT_INTERVAL", downlinkvalue: "HEARTBEAT_INTERVAL" },
+            { id: "19", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Request Heartbeat Payload Definition`, downlink: "request-HEARTBEAT_PAYLOAD_DEFINITION", downlinkvalue: "HEARTBEAT_PAYLOAD_DEFINITION" },
+            { id: "20", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Request Device Address`, downlink: "request-DEVICE_ADDRESS", downlinkvalue: "DEVICE_ADDRESS" },
+            { id: "21", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Request Confirm Messages`, downlink: "request-CONFIRMED_MESSAGES", downlinkvalue: "CONFIRMED_MESSAGES" },
+            { id: "22", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Request fport`, downlink: "request-FPORT", downlinkvalue: "FPORT" },
+            { id: "23", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Request Heartbeat Fport`, downlink: "request-FPORT_HEARTBEAT", downlinkvalue: "FPORT_HEARTBEAT" },
             { id: "24", for: ["Office Occupancy"], text: `Request Occupancy Distance`, downlink: "request-OCCUPANCY_DISTANCE", downlinkvalue: "OCCUPANCY_DISTANCE" },
-            { id: "25", for: ["People Counter", "Comfort Sensor", "Office Occupancy"], text: `Request Led Indication`, downlink: "request-LED_INDICATION", downlinkvalue: "LED_INDICATION" },
+            { id: "25", for: ["People Counter", "Office Occupancy"], text: `Request Led Indication`, downlink: "request-LED_INDICATION", downlinkvalue: "LED_INDICATION" },
             { id: "26", for: ["Moodbox"], text: `Request Button Delay`, downlink: "request-BTN_DELAY_TIME", downlinkvalue: "BTN_DELAY_TIME" }
         ]
         itemlist.sort((a, b) => (a.text.toUpperCase() > b.text.toUpperCase()) ? 1 : -1)
@@ -123,9 +118,9 @@
         function setList(ilist) {
             document.getElementById('itemlist').innerHTML = ""
             for (let index = 0; index < ilist.length; index++) {
-                document.getElementById('itemlist').innerHTML += `<p draggable="true" ondragstart="drag(event)" id="${ilist[index].id}"
-                    style="background-color: #80c9c4;width: fit-content;height: fit-content;border-radius: 17px;text-align: center;padding:7px;">
-                    ${ilist[index].text}</p>`
+                document.getElementById('itemlist').innerHTML += `<div draggable="true" ondragstart="drag(event)" id="${ilist[index].id}"
+                    class="dragable-item">
+                    ${ilist[index].text}</div>`
             }
         }
 
@@ -217,7 +212,6 @@
             for (let index = 0; index < itemlist.length; index++) {
                 if ((document.getElementById("radio_Office_Occupancy").checked && itemlist[index].for.includes("Office Occupancy")) ||
                     (document.getElementById("radio_Moodbox").checked && itemlist[index].for.includes("Moodbox")) ||
-                    (document.getElementById("radio_Comfort_Sensor").checked && itemlist[index].for.includes("Comfort Sensor")) ||
                     (document.getElementById("radio_People_Counter").checked && itemlist[index].for.includes("People Counter"))) {
                     newList.push(itemlist[index])
                 }
