@@ -7,7 +7,7 @@
 
 ## Introduction
 
-<img src="./assets/middleware/middleware-overview.png" alt="login form"  class="image-100 image-center">
+<img src="./assets/middleware/middleware-overview.png" alt="login form"  class="image-100 image-center image-border">
 
 ## Data forwarding
 

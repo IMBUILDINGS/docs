@@ -19,6 +19,10 @@ To login open the following URL: [https://app.im-motion.net](https://app.im-moti
 
 <img src="./assets/cloud/login-immotion.png" alt="login form"  class="image-75 image-center image-border">
 
+?>To login on our demo account please use the following credentials:<br>
+**Username:** demo@imbuildings.com<br>
+**Password:** imbuildings
+
 ## Adding devices (claim devices)
 
 !> You can continue to [Adding groups](#adding-groups) when you have a **People Counter NB-IoT** or when your **supplier already added the devices** for you
