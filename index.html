@@ -21,8 +21,13 @@
       loadFooter: true,
       logo: './assets/IMBuildings_logo_color.png',
       nativeEmoji: true,
-      loadNavbar: true,
-      ga: 'G-D30QQ4LFHC'
+      loadNavbar: false,
+      ga: 'G-D30QQ4LFHC',
+      copyCode: {
+        buttonText: 'Copy to clipboard',
+        errorText: 'Error',
+        successText: 'Copied',
+      },
     }
 
     function resizeIframe(obj) {
@@ -33,5 +38,6 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
 </body>
 </html>
