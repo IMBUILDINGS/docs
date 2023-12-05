@@ -25,6 +25,8 @@ Once data is received the webhook will be used to share the data.
 
 ?> The information in the `decoded` object can vary depending on the contents of the `devicePayload`<br>Please note that the `devicePayload`` is base64 encoded
 
+!> Please note that for LoRaWAN devices the original `devicePayload` is currently not available.
+
 **Example without metadata**
 ```js
 {
