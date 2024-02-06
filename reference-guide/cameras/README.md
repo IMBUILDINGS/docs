@@ -18,6 +18,8 @@ For authentication please enter any username or password.
 
 Please note that the cloud platform currently only parses the Adult information from the camera.
 
+When claiming the device the mac address must be used as an extended address. For example when the mac address is `11:22:33:44:55:66` please enter the following when claiming `112233FFFE445566`
+
 # Megacount
 
 Endpoint: `https://inbound.im-motion.net/device/megacount`
@@ -31,6 +33,8 @@ To use this endpoint enter the following in the configuration of the device:
 - Server response: `200`
 
 !> Please be sure that the time of the camera is set to UTC/GMT time
+
+When claiming the device the mac address must be used as an extended address. For example when the mac address is `11:22:33:44:55:66` please enter the following when claiming `112233FFFE445566`
 
 # TDIntelligence
 
