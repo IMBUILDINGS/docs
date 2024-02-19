@@ -33,10 +33,12 @@ h1, h2, h3, h4, h5 {
 
 .payload-header{
     background-color: var(--IMBMint);
+    color: white;
 }
 
 .payload-data{
     background-color: var(--IMBBlue);
+    color: white;
 }
 
 .table-details {
