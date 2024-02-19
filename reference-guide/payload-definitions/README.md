@@ -212,6 +212,82 @@ Desk Sensor - LoRaWAN<br>
 
 ## Payload details
 
+### Type 2 / Variant 4
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="6" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x02</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x04</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="4">10</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>6 bytes ID</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">12</td>
+        <td>12</td>
+        <td>Date (UTC)</td>
+        <td>4 bytes (YYYYMMDD) (BCD)</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>Time (UTC)</td>
+        <td>3 bytes (HHmmss) (BCD)</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>Counter A</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>Counter B</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>23</td>
+        <td>Sensor status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+</table>
+
+!>Please note that Counter A and Counter B are relative count values since the last transmission. This means that these values will reset to 0 when data is transmitted.
+
+
 ### Type 2 / Variant 6
 
 <table>
