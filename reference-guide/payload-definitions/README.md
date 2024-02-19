@@ -209,3 +209,323 @@ Desk Sensor - LoRaWAN<br>
     (with connectivity inforation)</td>
 </tr>
 </table>
+
+## Payload details
+
+### Type 2 / Variant 6
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="3" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x02</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x06</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">13</td>
+        <td>10</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>Counter A</td>
+        <td>2 bytes (unsigned int16)</td>
+    <tr>
+    <tr>
+        <td>15</td>
+        <td>Counter B</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>Sensor status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>Total Counter A</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>Total Counter B</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>22</td>
+        <td>Payload counter</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+</table>
+
+!>Please note that Counter A and Counter B are relative count values since the last transmission. This means that these values will reset to 0 when data is transmitted.
+
+?>We recommend to use the Total Counter A and Total Counter B values.
+
+### Type 2 / Variant 7
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="3" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x02</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x07</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">5</td>
+        <td>10</td>
+        <td>Sensor status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Total Counter A</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>Total Counter B</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+</table>
+
+### Type 2 / Variant 8
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="3" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x02</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x08</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">4</td>
+        <td>10</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>Sensor status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+</table>
+
+### Type 2 / Variant 9
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="3" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x02</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x09</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>8</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">15</td>
+        <td>10</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>Counter A</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>Counter B</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>Sensor status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>Total Counter A</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>Total Counter B</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>22</td>
+        <td>Payload counter</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>23</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td>24</td>
+        <td>CE LEvel</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+</table>
+
+!>Please note that Counter A and Counter B are relative count values since the last transmission. This means that these values will reset to 0 when data is transmitted.
+
+?>We recommend to use the Total Counter A and Total Counter B values.
+
+### Type 2 / Variant 12
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="3" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x02</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x0C</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">8</td>
+        <td>10</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>Sensor status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>Count sensor on (seconds)</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>Count sensor off (seconds)</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+</table>
+
+!> Please note that the count sensor on and off time in seconds is reset once the message is transmitted
