@@ -212,7 +212,85 @@ Desk Sensor - LoRaWAN<br>
 
 ## Payload details
 
-### Type 2 / Variant 6
+### Type 2: People Counting
+
+#### Type 2 / Variant 4
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="6" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x02</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x04</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="4">10</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>6 bytes ID</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">12</td>
+        <td>12</td>
+        <td>Date (UTC)</td>
+        <td>4 bytes (YYYYMMDD) (BCD)</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>Time (UTC)</td>
+        <td>3 bytes (HHmmss) (BCD)</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>Counter A</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>Counter B</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>23</td>
+        <td>Sensor status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+</table>
+
+!>Please note that Counter A and Counter B are relative count values since the last transmission. This means that these values will reset to 0 when data is transmitted.
+
+
+#### Type 2 / Variant 6
 
 <table>
     <tr class="payload-header">
@@ -289,7 +367,7 @@ Desk Sensor - LoRaWAN<br>
 
 ?>We recommend to use the Total Counter A and Total Counter B values.
 
-### Type 2 / Variant 7
+#### Type 2 / Variant 7
 
 <table>
     <tr class="payload-header">
@@ -337,7 +415,7 @@ Desk Sensor - LoRaWAN<br>
     </tr>
 </table>
 
-### Type 2 / Variant 8
+#### Type 2 / Variant 8
 
 <table>
     <tr class="payload-header">
@@ -384,7 +462,7 @@ Desk Sensor - LoRaWAN<br>
     </tr>
 </table>
 
-### Type 2 / Variant 9
+#### Type 2 / Variant 9
 
 <table>
     <tr class="payload-header">
@@ -471,7 +549,7 @@ Desk Sensor - LoRaWAN<br>
 
 ?>We recommend to use the Total Counter A and Total Counter B values.
 
-### Type 2 / Variant 12
+#### Type 2 / Variant 12
 
 <table>
     <tr class="payload-header">
@@ -529,3 +607,396 @@ Desk Sensor - LoRaWAN<br>
 </table>
 
 !> Please note that the count sensor on and off time in seconds is reset once the message is transmitted
+
+### Type 3: Buttons
+
+#### Type 3 / Variant 1
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="6" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x03</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x01</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="4">10</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>6 bytes ID</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td>1</td>
+        <td>12</td>
+        <td>Button pressed</td>
+        <td>1 byte<br>
+        -- bit 0: Button A pressed<br>
+        -- bit 1: Button B pressed<br>
+        -- bit 2: Button C pressed<br>
+        -- bit 3: Button D pressed<br>
+        -- bit 4: Button E pressed<br>
+        </td>
+    </tr>   
+</table>
+
+#### Type 3 / Variant 2
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="6" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x03</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x02</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="4">10</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>6 bytes ID</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">8</td>
+        <td>12</td>
+        <td>Date (UTC)</td>
+        <td>4 bytes (YYYYMMDD) (BCD)</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>Time (UTC)</td>
+        <td>3 bytes (HHmmss) (BCD)</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>Button pressed</td>
+        <td>1 byte<br>
+        -- bit 0: Button A pressed<br>
+        -- bit 1: Button B pressed<br>
+        -- bit 2: Button C pressed<br>
+        -- bit 3: Button D pressed<br>
+        -- bit 4: Button E pressed<br>
+        </td>
+    </tr>  
+</table>
+
+#### Type 3 / Variant 3
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x03</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x03</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td>1</td>
+        <td>13</td>
+        <td>Button pressed</td>
+        <td>1 byte<br>
+        -- bit 0: Button A pressed<br>
+        -- bit 1: Button B pressed<br>
+        -- bit 2: Button C pressed<br>
+        -- bit 3: Button D pressed<br>
+        -- bit 4: Button E pressed<br>
+        </td>
+</table>
+
+#### Type 3 / Variant 4
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x03</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x04</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">10</td>
+        <td>13</td>
+        <td>Button A count</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>Button B count</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>Button C count</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>Button D count</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>Button E count</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+</table>
+
+#### Type 3 / Variant 5
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x03</td>
+        <td>Payload type</td>
+    </4tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x05</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">3</td>
+        <td>13</td>
+        <td>Button pressed</td>
+        <td>1 byte<br>
+        -- bit 0: Button A pressed<br>
+        -- bit 1: Button B pressed<br>
+        -- bit 2: Button C pressed<br>
+        -- bit 3: Button D pressed<br>
+        -- bit 4: Button E pressed
+        </td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>CE Level</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+</table>
+
+#### Type 3 / Variant 6
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x03</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x06</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned 16bit)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">12</td>
+        <td>13</td>
+        <td>Buttton A count</td>
+        <td>2 bytes (unsigned 16bit)</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>Button B count</td>
+        <td>2 bytes (unsigned 16bit)</td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>Button C count</td>
+        <td>2 bytes (unsigned 16bit)</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>Button D count</td>
+        <td>2 bytes (unsigned 16bit)</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>Button E count</td>
+        <td>2 bytes (unsigned 16bit)</td>
+    </tr>
+    <tr>
+        <td>23</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td>24</td>
+        <td>CE Level</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+</table>
