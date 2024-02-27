@@ -10,6 +10,13 @@ In case you have another counting camera which you want to have integrated into 
 
 Below you will find some basic instruction on how to setup the camera for each brand.
 
+# Brickstream
+
+More information comming soon.
+<!--
+Endpoint: `https://inbound.im-motion.net/device/brickstream`
+-->
+
 # Hella
 
 Endpoint: `https://inbound.im-motion.net/device/hella`
