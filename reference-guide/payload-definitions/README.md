@@ -212,6 +212,665 @@ Desk Sensor - LoRaWAN<br>
 
 ## Payload details
 
+In case you have a payload which is not listed please let us know.
+You might have an 'older' device or a prototype.
+
+### Type 1: Various sensors
+
+### Type 1 / Variant 1
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="6" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x01</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="4">10</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>6 bytes ID</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned 16bit)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">7</td>
+        <td>12</td>
+        <td>Temperature (Celcius)</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>Relative humidity</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>CO<sub>2</sub></td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>Presence</td>
+        <td>1 byte</td>
+    </tr>
+</table>
+
+### Type 1 / Variant 2
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="6" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x02</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="4">10</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>6 bytes ID</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned 16bit)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">14</td>
+        <td>12</td>
+        <td>Date (UTC)</td>
+        <td>4 bytes (YYYYMMDD) (BCD)</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>Time (UTC)</td>
+        <td>3 bytes (HHmmss) (BCD)</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>Temperature (Celcius)</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>21</td>
+        <td>Relative humidity</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>23</td>
+        <td>CO<sub>2</sub></td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>25</td>
+        <td>Presence</td>
+        <td>1 byte</td>
+    </tr>
+</table>
+
+### Type 1 / Variant 3
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x03</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">7</td>
+        <td>13</td>
+        <td>Temperature (Celcius)</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>Relative humidity</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>CO<sub>2</sub></td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>Presence</td>
+        <td>1 byte</td>
+    </tr>
+</table>
+
+### Type 1 / Variant 4
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="6" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x04</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>    
+        <td rowspan="4">10</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>6 bytes ID</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned 16bit)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">6</td>
+        <td>12</td>
+        <td>Min. Temperature</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>Max. Temperature</td>
+        <td>2 bytes</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>Current Temperature</td>
+        <td>2 bytes</td>
+    </tr>
+</table>
+
+### Type 1 / Variant 5
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="6" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x05</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="4">10</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>6 bytes ID</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Device status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td class="payload-data">Data</td>
+        <td>1</td>
+        <td>12</td>
+        <td>Event type</td>
+        <td>1 byte<br>
+        0x01 = Presence event<br>
+        0x02 = Power lost</br>
+        </td>
+    </tr>
+</table>
+
+### Type 1 / Variant 6
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x06</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Status</td>
+        <td>1 byt (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td>1</td>
+        <td>13</td>
+        <td>Event type</td>
+        <td>1 byte<br>
+        0x01 = Presence event<br>
+        0x02 = Power lost
+        </td>
+    </tr>
+</table>
+
+### Type 1 / Variant 7
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x07</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td>1</td>
+        <td>13</td>
+        <td>Presence percentage</td>
+        <td>1 byte (unsigned)<br>
+        percentage of interval present</td>
+    </tr>
+</table>
+
+### Type 1 / Variant 8 
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x08</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">1</td>
+        <td>13</td>
+        <td>Presence time</td>
+        <td>1 byte<br>
+        time in minutes</td>
+    </tr>
+</table>
+
+### Type 1 / Variant 9
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x09</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">3</td>
+        <td>13</td>
+        <td>Event type</td>
+        <td>1 byte<br>
+        0x01 = Presence event</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>CE Level</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+</table>
+
+### Type 1 / Variant 10
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x0A</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="0">3</td>
+        <td>13</td>
+        <td>Presence percentage</td>
+        <td>1 byte (unsigned)<br>
+        Presence percentage of interval</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>CE Level</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+</table>
+
+### Type 1 / Variant 11
+
+<table>
+    <tr class="payload-header">
+        <th>Section</th>
+        <th>Size</th>
+        <th>Index</th>
+        <th width="200">Values</th>
+        <th width="400">Info</th>
+    </tr>
+    <tr>
+        <td rowspan="5" class="payload-header">Header</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0x01</td>
+        <td>Payload type</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1</td>
+        <td>0x0B</td>
+        <td>Payload variant</td>
+    </tr>
+    <tr>
+        <td rowspan="3">11</td>
+        <td>2</td>
+        <td>Device ID</td>
+        <td>8 bytes ID</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Status</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Battery voltage</td>
+        <td>2 bytes (unsigned int16)</td>
+    </tr>
+    <tr>
+        <td rowspan="0" class="payload-data">Data</td>
+        <td rowspan="3">3</td>
+        <td>13</td>
+        <td>Presence time</td>
+        <td>1 byte (unsigned)<br>
+        Presence time in minute</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>RSSI</td>
+        <td>1 byte (signed)</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>CE Level</td>
+        <td>1 byte (unsigned)</td>
+    </tr>
+</table>
+
 ### Type 2: People Counting
 
 #### Type 2 / Variant 4
