@@ -69,7 +69,31 @@ When claiming the device the mac address must be used as an extended address. Fo
 
 # Xovis
 
-More information comming soon.
-<!--
 Endpoint: `https://inbound.im-motion.net/device/xovis`
--->
+
+To use this endpoint please configure the following within the settings of the camera.
+<br>Navigate to `Settings` > `Singlesensor` > `Data push`
+
+Add a new connection using the `Add connection +` button and choose `HTTP / HTTPS connection`.
+<br>Enter the endpoint (`https://inbound.im-motion.net/device/xovis`). Be sure you also enable `SSL/TLS` this will change the portnumber from `80` to `443`.
+Once all set click on `Save`.
+
+Now the connection is configured we can add an Agent to share the data with the Cloud platform.
+<br>Click on `Add new agent +` and choose `Logics push`.
+
+Within the Logics push you need to enter the following settings.<br>
+**General**<br>
+Scheduler type: `interval`<br>
+Resolution: `1 minute`<br>
+Interval (package time): `1 minute`
+
+
+**Data format**<br>
+Format: `JSON`<br>
+Time format: `RFC3339`<br>
+Full package info: `enabled`<br>
+Full sensor info: `enabled`
+
+Once all set click on `Save` and be sure you enable the Agent (this is the switch in the header of the configuration section).
+
+When claiming the device the mac address must be used as an extended address. For example when the mac address is `11:22:33:44:55:66` please enter the following when claiming `112233FFFE445566`
