@@ -5,7 +5,7 @@ This App is available for Android and can be downloaded on the Google Play Store
 To install the App click the button below.
 
 <a href="https://play.google.com/store/apps/details?id=com.imbuildings.configapp" target="_blank">
-<img src="/assets/GetItOnGooglePlay_Badge_Web_color_English.png" style="height:15mm">
+<img src="./assets/GetItOnGooglePlay_Badge_Web_color_English.png" style="height:15mm">
 </a>
 
 ## Full device reset
