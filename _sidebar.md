@@ -3,13 +3,14 @@
     - [People Counter - LoRaWAN](./quick-start/people-counter/lorawan/)
     - [People Counter - NB-IoT](./quick-start/people-counter/nb-iot/)
     - [People Counter - EnOcean](./quick-start/people-counter/enocean/)
+- [**Config App**](./config-app/ooc/)
 - [**Cloud**](./quick-start/cloud/)
 - [**Cloud Middleware**](./reference-guide/middleware/)
 - **Online Tools**
     - [Payload Decoder/Encoder](./tools/decoder-encoder/)
     - [Downlink Encoder](./tools/downlink/)
     - [Battery Calculator](./tools/battery-calculator/)
-- **Referance guide**
+- **Reference guide**
     - [Payload Parser](./reference-guide/payload-parser/)
     - [Payload Definitions](./reference-guide/payload-definitions/)
     - [People Counter](./reference-guide/people-counter/)

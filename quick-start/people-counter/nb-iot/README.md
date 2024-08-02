@@ -15,6 +15,10 @@ In case you have the People Counter - NB-IoT including the IMMotion / IMBuilding
 
 !>**Note:** When you have this solution the device already contains a SIM card and the correct configuration to connect with the IMBuildings Cloud.
 
+## Installation
+Please watch the following video for installation instructions
+<iframe width="560" height="315" src="https://www.youtube.com/embed/22dLGkQ20Os?si=VcBFTlCCPWUdtSvE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Status LED functions
 
 The IR receiver contains a status LED which displays at which state the device is functioning.
