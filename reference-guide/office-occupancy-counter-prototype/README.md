@@ -48,7 +48,7 @@ For correct counting it is important to position the counter in the middle above
 Be sure that the device is able to look through the dooropening. This means that the device can detect any movement near the device.
 This is important to enable the counting feature at the right time.
 
-<img src="/assets/ooc-dooropening.png" alt="Dooropening" width="400">
+<img src="./assets/ooc-dooropening.png" alt="Dooropening" width="400">
 
 When choosing the position of the device also keep in mind the height of installation.
 In the picture below you see the two threshold that can be configured to set the count zones.<br>
@@ -71,8 +71,8 @@ In case screws are used be sure the correct type of screw is selected for the ty
 
 ## Product pictures
 
-<img src="./assets/OOC-prototype.png" alt="OOC" width="300">
+<img src="./assets/OOC-Prototype.png" alt="OOC" width="300">
 
-<img src="./assets/OOC-prototype-open.png" alt="OOC open" width="400">
+<img src="./assets/OOC-Prototype-open.png" alt="OOC open" width="400">
 
 ?>The included screws can be used to close the housing. The housing does also close with a 'click' mechanism.
