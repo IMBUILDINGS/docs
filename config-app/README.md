@@ -55,7 +55,7 @@ The People Counter does have the following device specific setting:
 
 ## Office Occupancy Counter settings
 
-To work with NFC on the Office Occupancy Counter check the video below.
+To use the NFC on the Office Occupancy Counter check the video below.
 <iframe width="360" height="315" src="https://www.youtube.com/embed/H0ugGHhgrDg?si=Q2_zbAuQY5DhC71X" title="IMBuildings Config App" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 The Office Occupancy Counter does have the following device specific settings:
@@ -64,7 +64,8 @@ The Office Occupancy Counter does have the following device specific settings:
 
 ## Moodbox / buttons settings
 
-?> We are working to document this chapter
+To use NFC please check the video below
+<iframe width="360" height="315" src="https://www.youtube.com/embed/oWJgJdN2aBU?si=tInqPRMqfz2JdJpK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 The Moodbox / buttons does have the following device specific settings:
 - Event mode based on button pushes
