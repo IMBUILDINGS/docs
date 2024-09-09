@@ -7,7 +7,7 @@ Please read the quick start guide first.
 Below a picture showing the sensors and LEDs on the product<br>
 <img src="./assets/OOC-overview.png" alt="overview">
 
-**Count direction**
+**Count direction**<br>
 To determine the count direction for in and out going traffic please notice the A and B direction.<br>
 Within the data if the device a Counter A and Counter B are representing the values for these two count directions.
 
@@ -65,6 +65,10 @@ For larger installations it is recommended to install all devices first and do t
 <img src="./assets/ooc-thresholds.png" alt="count zones">
 
 !>For battery optimization it is recommended to place the sensor on the side of the door where there is the least amount of movement.
+
+## Height/distance setting
+Please be sure the height/distance settings of the device are set according to your requirements.<br>
+These settings can be set using the Config App or using downlinks to the device once it is installed and connected to the LoRaWAN network.s
 
 ## Installation
 For installation use methods like screwing our double sided tape to mount the device on top of the door opening. Please choose what is best for your situation.
