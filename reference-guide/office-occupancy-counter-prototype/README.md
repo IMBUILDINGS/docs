@@ -7,6 +7,10 @@ Please read the quick start guide first.
 Below a picture showing the sensors and LEDs on the product<br>
 <img src="./assets/OOC-overview.png" alt="overview">
 
+**Count direction**
+To determine the count direction for in and out going traffic please notice the A and B direction.<br>
+Within the data if the device a Counter A and Counter B are representing the values for these two count directions.
+
 **Status LED**
 - Blinkin blue: connecting and communicating with the LoRaWAN network
 - Green blink: count received from the sensor
