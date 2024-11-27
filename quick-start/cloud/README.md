@@ -256,7 +256,7 @@ Additional info gives more information about the group and can also help find th
 - **Timezone**: If the group is located in a different timezone then the timezone you are watching the data from, your data will be displayed in the correct timezone.
 - **Desciption**: Gives more information about the group.
 
-<img src="./assets/cloud/group-additional-info.png" alt="dashboard-prediction" class="image-75 image-center image-border">
+<img src="./assets/cloud/group-additional-info.png" alt="group-additional-info" class="image-75 image-center image-border">
 
 ### Display settings
 Any changes made will be shown in the data preview below. 
@@ -269,7 +269,163 @@ Any changes made will be shown in the data preview below.
     - **Capacity**: The capacity will show a red-dotted line that indicates the capacity. You can use this to compare it to the occupancy.
     - **Reset time** (full hour): At this hour the occupancy will be reset to 0, this is meant to fix any deviation on the end of a day. 
 
-<img src="./assets/cloud/group-display-settings.png" alt="dashboard-prediction" class="image-75 image-center image-border">
+<img src="./assets/cloud/group-display-settings.png" alt="group-display-settings" class="image-75 image-center image-border">
+
+## Tokens & Integrations
+
+For supplying data to your BI solution you might use automated data collection.
+Our platform allows such an integration.<br>
+The data export method allows you to collect once (or a few times) a day a complete dataset.
+
+This method can be enabled via the platform under [Settings->Organization](https://app.im-motion.net/organization).<br>
+Here you will find the option to add <b>tokens</b>. Once a token is generated you are able to request an export from our 'connect' server.<br>
+Several exports (all in JSON format) are available. 
+
+<b>Export token</b><br>
+The export connection string uses a token t built from several items:
+
+``https://connect.im-motion.net/flow/4ccd9c91-7e36-470e-89fc-f8a262971022?exportType=83a08703-04c7-4aaf-ad12-bdd09fbc0190&token=b460ae48-9c48-40fb-a614-beebc815827e&startDate=2024-09-22&stopDate=2024-09-23&output=json``
+
+- exportType, this determines the interval of the data: 
+  - minutely (97b559c6-1468-4a1b-a983-48c275fa7cf9)
+  - hourly (83a08703-04c7-4aaf-ad12-bdd09fbc0190)
+  - daily (ec618692-79b7-4es1f-8a16-b7eb79ec9941)
+- token, this is a unique token created for your organization
+- startDate, indicates since what day the data should be fetched, formatted as YYYY-MM-DD.
+- endDate, indicates until what day the data should be fetched, formatted as YYYY-MM-DD.
+- output, type of return data(options: JSON)
+
+
+# Live Monitoring
+
+Easily monitor your rooms live using multiple display options. Currently, we provide three monitoring options: 
+
+1. **Multi-group Monitor**  
+2. **Customizable Monitor (max. 1 group)**  
+3. **Area Dashboard**  
+
+!> Your sensor must send **live data**, not interval data.  
+    To display the maximum capacity of a room, set the occupancy for the group on the **Groups** page.
+
+---
+
+## Multi-group Monitor
+The **Multi-group Monitor** displays occupancy for multiple groups, using a color-coded bar that transitions from green to red as the room fills.  
+Example:  
+
+<img src="./assets/middleware/occupancy_immotion_monitor.png" alt="Multi-group Monitor"  class="image-100 image-center image-border">
+
+<b>Configuration Steps</b>
+1. Navigate to the **Organization** page.  
+2. Set the group integration to **Webhook**:
+   - Select the group(s).
+   - Choose **Webhook** as the integration type.
+   - Set the endpoint to `https://occupancy.im-motion.net/group/{GROUP-ID}` (replace `{GROUP-ID}` with your group's ID).  
+   - Press **Save/Add Integration**.  
+
+3. For each device in the group, set the integration to **Group Trigger**:  
+   - Select the device(s).  
+   - Choose **Group Trigger** as the integration type.  
+   - Activate the trigger (toggle the slider).  
+   - Press **Save/Add Integration**.
+
+<b> Access the Multi-group Monitor</b>
+The monitor is available at:  
+`https://occupancy.im-motion.net/?id={TENANT-ID}`  
+
+<b> Options:</b>
+- Add `&occupancy=show` to display occupancy, e.g., `(Inside: 2 / Max: 3)`.  
+  Without this, it displays only the capacity, e.g., `(Capacity: 3)`.
+
+---
+
+## Customizable Monitor
+The **Customizable Monitor** allows near-complete customization.  
+Example:  
+
+<img src="./assets/middleware/occupancy_monitor_custom.png" alt="Customizable Monitor"  class="image-100 image-center image-border">
+
+<b>Configuration Steps</b>
+1. On the **Organization** page, create a token named **LiveMonitoringFrame**.  
+2. Press **Example** to generate the following link:  
+   `https://app.im-motion.net/monitoring/frame/{GROUP-ID}?token={TOKEN}`  
+   Replace `{GROUP-ID}` and `{TOKEN}` with your group ID and the created token.
+
+3. Set group Webhook integrations:  
+   - Follow the same Webhook integration settings as for the Multi-group Monitor.
+
+4. You can also use the **data preview** icon on the **Groups** page.
+
+<b> Example URL with Custom Options:</b>
+`https://app.im-motion.net/monitoring/frame/{GROUP-ID}?token={TOKEN}&background-color=gray&gradient=false&text-color=white`
+
+<b>Customization Options:</b>
+- **`background-color`**: Set the background color.  
+  *Value*: Any valid color (e.g., `gray`).  
+- **`gradient`**: Disable gradient coloring for the progress bar.  
+  *Value*: `"true"` or `"false"`.  
+- **`title-color`**: Set the title text color.  
+  *Value*: Any valid color (e.g., `white`).  
+- **`text-color`**: Set the value text color.  
+  *Value*: Any valid color.  
+- **`display-color`**: Set a static progress bar color.  
+  *Value*: Any valid color.  
+- **`title`**: Hide the title.  
+  *Value*: `"true"` or `"false"`.  
+- **`subtitle`**: Set a subtitle text.  
+  *Value*: Text (use `%20` for spaces).  
+- **`title-text`**: Set a custom title text.  
+  *Value*: Text (use `%20` for spaces).  
+- **`frame-overlay-color`**: Set overlay color.  
+  *Value*: Any valid color.  
+- **`show-max`**: Show group capacity.  
+  *Value*: `"true"` or `"false"`.  
+- **`frame-capacity`**: Set the group capacity.  
+  *Value*: A number.  
+- **`reset-time`**: Reset occupancy to zero at a specified time.  
+  *Value*: Full hour (e.g., `12`).  
+- **`allow-negative`**: Enable counting below zero.  
+  *Value*: `"true"` or `"false"`.  
+- **`start-value`**: Set the starting occupancy value.  
+  *Value*: A number.  
+- **`in-only`**: Count only incoming people.  
+  *Value*: `"true"` or `"false"`.  
+- **`switch-ab`**: Switch the "in-side", counter a for out and counter b for in.    
+  *Value*: `"true"` or `"false"`.  
+
+
+---
+
+## Area Dashboard
+The **Area Dashboard** displays occupancy of one or multiple groups.
+Example (`Example 1-4` are the group names):  
+
+<img src="./assets/middleware/middleware-areadashboard-example.png" alt="areadashboard-example"  class="image-100 image-center image-border">
+
+<b>Configuration Steps</b>
+
+!> For correct display, please configure the group on the ([Groups page](https://app.im-motion.net/groups)), and set the following items:   
+    - Occupancy display: `On`    
+    - Capacity: `Number` of maximum people inside
+
+1. On the **Organization** page, create a token named **AreaDashboard**. 
+
+2. Use the created token to generate a link:  
+   `http://app.im-motion.net/areaDashboard/{TOKEN}`  
+   Replace `{TOKEN}` with your token.
+
+3. Visit the link and enter the setup:  
+   - Select up to 9 groups.  
+   - Press `Show dashboard` to display the occupancy.
+
+<img src="./assets/middleware/middleware-areadashboard-setup.png" alt="areadashboard-setup"  class="image-100 image-center image-border">
+
+<b> Note:</b>
+- Use full-screen mode for better visibility (`F11` on Windows).  
+- Background colors update dynamically based on group capacity.  
+- The occupancy may have a wrong display due to:   
+    - Entrances/exits being missed.
+    - The 'in-side' configuration is not configured correctly ([Groups page](https://app.im-motion.net/groups)).
 
 <!-- 
 use yt videos where needed

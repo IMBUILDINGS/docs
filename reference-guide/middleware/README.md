@@ -121,8 +121,8 @@ Our platform allows such an integration.<br>
 The data export method allows you to collect once (or a few times) a day a complete dataset.
 
 This method can be enabled via the platform under [Settings->Organization](https://app.im-motion.net/organization).<br>
-Here you will find the option to add tokens. Once a token is generated you are able to request an export from our 'connect' server.<br>
-Several exports (all in JSON format) are available.
+Here you will find the option to add <b>tokens</b>. Once a token is generated you are able to request an export from our 'connect' server.<br>
+Several exports (all in JSON format) are available. More on this at [Tokens & Integrations](/./quick-start/cloud/?id=tokens-amp-integrations)
 
 ## REST API
 
