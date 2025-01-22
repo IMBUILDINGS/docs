@@ -3,7 +3,7 @@
 IMBuildings Cloud allows data to be retreived from multiple LoRaWAN solutions.
 Received data is visible within the IMMotion Cloud application.
 
-Currently the following LoRaWAN solutions can be integated
+Currently the following LoRaWAN solutions can be integrated
 - The Things Network / The Things Industries
 - Loriot
 - Senet

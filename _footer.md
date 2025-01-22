@@ -5,7 +5,7 @@
 <a href="https://github.com/IMBUILDINGS" target="_blank"><img src="./assets/github-mark.svg" width="20"></a>
 <a href="https://www.linkedin.com/company/imbuildings/" target="_blank"><img src="./assets/linkedin.svg" width="20"></a>
 <a href="https://www.youtube.com/channel/UCcur6TJMv_rT1ZUIHMjhjYQ" target="_blank"><img src="./assets/youtube.svg" width="20"></a>\
-<small>&copy;2024 [IMBuildings B.V.](https://www.imbuildings.com) - The Netherlands
+<small>&copy;2025 [IMBuildings B.V.](https://www.imbuildings.com) - The Netherlands
 </small>
 <br>
 <small>
