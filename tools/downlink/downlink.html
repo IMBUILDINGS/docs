@@ -19,8 +19,8 @@
     </style>
 </head>
 
-<body>
-    <div style="overflow-y: scroll; height: 1400px;">
+<body style="margin:40px;">
+    <h1>Downlink encoder</h1>
         <p>You can drag items from below the dropzone into the dropzone, you can remove items from the dropzone by
             dragging them on to the trash can. </p>
         <p><b>Note:</b> The downlink will most likely not be in the same order that you add the items.</p>
@@ -91,7 +91,7 @@
             { id: "8", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set Confirmed messages${getNumberInput("8", "confirmed_messages", 1, 12)}`, downlink: "confirmed_messages", downlinkvalue: 1 },
             { id: "9", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set SAVE`, downlink: "save", downlinkvalue: true },
             { id: "10", for: ["People Counter", "Office Occupancy", "Moodbox"], text: `Set RESET${getNumberInput("10", "reset", 1, 12)}`, downlink: "reset", downlinkvalue: 1 },
-            { id: "11", for: ["Office Occupancy"], text: `Set Office Occupancy ignore-distance${getNumberInput("11", "ignore_distance", 1, 200)} and ignore-distance${getNumberInput("11", "detection_distance", 10, 200)} in cm`, downlink: "occupancy_distance", downlinkvalue: { "ignore_distance": 1, "detection_distance": 1 } },
+            { id: "11", for: ["Office Occupancy"], text: `Set Office Occupancy ignore-distance${getNumberInput("11", "ignore_distance", 15, 200)} and detection-distance${getNumberInput("11", "detection_distance", 150, 200)} in cm`, downlink: "occupancy_distance", downlinkvalue: { "ignore_distance": 1, "detection_distance": 1 } },
             { id: "12", for: ["People Counter", "Office Occupancy"], text: `Set Led Indication${getNumberInput("12", "led_indication", 1, 1)}`, downlink: "led_indication", downlinkvalue: 1 },
             { id: "13", for: ["Moodbox"], text: `Set Button Delay time${getNumberInput("13", "button_delay_time", 1, 160)}`, downlink: "button_delay_time", downlinkvalue: 1 },
             { id: "14", for: ["People Counter", "Moodbox"], text: `Request Device ID`, downlink: "request-DEVICE_ID", downlinkvalue: "DEVICE_ID" },
@@ -179,6 +179,9 @@
                 }
                 obj[result.downlink] = result.downlinkvalue
             }
+
+            console.log(obj);
+
             let input = {}
             input.data = obj
             let test = encodeDownlink(input)

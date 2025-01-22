@@ -1,5 +1,6 @@
 # Downlink Encoder
 
-Try it out and validate your implementation.<br>
+Use our downlink encoder to construct the payload for download messages.<br>
+These downlink messages can be used to change settings in your devices, execute commands or read out settings.
 
-[tool](./downlink.html ':include type=iframe height=1400px')
+<a href="/tools/downlink/downlink.html" target="_blank">Click here</a> to open the encoder.
