@@ -1,4 +1,4 @@
-# People Counter - NB-IoT
+# People Counter - USB
 
 ?> Download the <a href="./pdf/IMBuildings - Quick start guide - People Counter - USB v25.01-1.pdf">Quick start guide</a>
 
@@ -9,7 +9,7 @@ For information about installation please read the <a href="./pdf/IMBuildings - 
 
 ?>As an alternative the collected data files can be exported to an Excel file without using a Cloud account: <a href="https://app.im-motion.net/public-usb-people-counter" target="_blank">USB Memfile converter</a>
 
-!>Download here the instructions for the discontinued solution using the on premise software installation 
+!>Download <a href="./pdf/USB People Counter.pdf">here</a> the instructions for the discontinued solution using the on premise software installation 
 
 ## Free cloud dashboard
 
