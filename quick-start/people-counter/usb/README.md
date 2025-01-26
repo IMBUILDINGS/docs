@@ -34,3 +34,17 @@ This status LED is visible from the frontside of the device.
 <tr><td align="center"><img src="./assets/blink-led-red.gif" width="15"></td><td>IR Transmitter and IR Receiver not aligned</td>
 </table>
 
+## Read out using USB stick
+
+Below a short video showing how to read out the people counter with a USB stick.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HU64OTo57-U?si=vl00ej9xdqfjTa2I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+After reading out the data you can import the data onto the IMMotion Cloud platform.
+
+## Replacing the batteries
+
+Below a short video showing how to replace the batteries of the people counter.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LOzhnYEsW3g?si=U7Xo0Zq2mEvMeUmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
