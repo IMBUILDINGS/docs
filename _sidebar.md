@@ -8,6 +8,7 @@
 - [**Config App**](./config-app/)
 - [**Cloud**](./quick-start/cloud/)
 - [**Cloud Middleware**](./reference-guide/middleware/)
+- [**Cloud Reseller**](./reference-guide/reseller/)
 - **Online Tools**
     - [Payload Decoder/Encoder](./tools/decoder-encoder/)
     - [Downlink Encoder](./tools/downlink/)
