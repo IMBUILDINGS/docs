@@ -1,6 +1,6 @@
 # Battery operated Office Occupancy Counter - LoRaWAN (prototype)
 
-?> Download the <a href="./pdf/IMBuildings - Quick start guide - Office Occupancy Counter - LoRaWAN - prototype.pdf" target="_blank">Quick start guide</a>
+?> Download the <a href="./pdf/IMBuildings - Quick start guide - VertiCount Pro - prototype.pdf" target="_blank">Quick start guide</a>
 
 Please read the quick start guide first.
 
