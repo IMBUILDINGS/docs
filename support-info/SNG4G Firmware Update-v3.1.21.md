@@ -4,13 +4,12 @@ On this page you will find a short instruction how to apply a new firmware onto 
 
 Below the download for the latest firmware. This download includes the necessary tools to perform the update.
 
-[Download update v3.1.22 (868 version)](https://support.imbuildings.com/docs/support-info/downloads/SNG4G-v3.1.22-868.zip)
-[Download update v3.1.22 (915 version)](https://support.imbuildings.com/docs/support-info/downloads/SNG4G-v3.1.22-915.zip)
+[Download update v3.1.21 (EU version)](https://support.imbuildings.com/docs/support-info/downloads/SNG4G-v3.1.21-868.zip)
 
 ### 1. Extract the contents of the downloaded zip file
 
-Please extract the contents of the zip file to a folder of choice. Note that this zip contains a folder named `SNG4G-868` or `SNG4G-915`<br>
-This folder contains the `USB Firmware Loader` tools, the `SNG Tool v3.4.0` and the firmware bin file `SNG4G V3.1.22 868.bin` or `SNG4G V3.1.22 915.bin` 
+Please extract the contents of the zip file to a folder of choice. Note that this zip contains a folder named `SNG4G-868`<br>
+This folder contains the `USB Firmware Loader` tools, the `SNG Tool v3.4.0` and the firmware bin file `SNG4G V3.1.21 868.bin`
 
 ### 2. Put the SNG4G into bootmode
 Please start the application named `1` in the `USB Firmware Loader` folder.
@@ -33,7 +32,7 @@ Start the following application `USB Firmware Loader`.
 
 You should see that a USB device is connected. This is the SNG4G which is in bootmode.
 
-Click on `Load file` and open the `SNG4G v3.1.22 868.bin` file (or another version depending on the version you downloaded).
+Click on `Load file` and open the `SNG4G v3.1.21 868.bin` file (or another version depending on the version you downloaded).
 <br>Once the file is loaded it will be checked and the `Update` button will be enabled.
 
 Click on `Update` to load the firmware.<br>
