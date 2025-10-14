@@ -4,7 +4,7 @@ The IMBuildings Config App enables you to configure the device using NFC.<br>
 This App is available on the Google Play Store. Click the link below to install the app.<br>
 
 <a href="https://play.google.com/store/apps/details?id=com.imbuildings.app.config" target="_blank">
-<img src="./assets/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Install config app">
+<img src="/docs/assets/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Install config app">
 </a>
 
 ## Full device reset
